@@ -1,0 +1,196 @@
+#set($scriptSlider=true)
+#parse("/velocity/include/header.vm")
+<div class="financingImg" style="background-image: url('../img/banner1.jpg')"></div>
+##企业融资与金融机构资产端需求
+<div class="financing">
+    <div class="financingBox">
+        <h4>企业融资与金融机构资产端需求</h4>
+        <div class="debtFinancingBox">
+            <h5>债权融资</h5>
+            <div class="debtListBox">
+                <ul class="debtList clearfix">
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon bankIcon"></i></div>
+                        <dl>
+                            <dt>银行</dt>
+                            <dd>政策性银行</dd>
+                            <dd>全国股份制商业银行</dd>
+                            <dd>城商行</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon ticketIcon"></i></div>
+                        <dl>
+                            <dt>券商</dt>
+                            <dd>公司债务</dd>
+                            <dd>企业债券</dd>
+                            <dd>非金融机构债务融资工具</dd>
+                            <dd>资产证券化</dd>
+                            <dd>资产管理计划</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon creditIcon"></i></div>
+                        <dl>
+                            <dt>信托</dt>
+                            <dd>贷款运营类</dd>
+                            <dd>证券运营类</dd>
+                            <dd>股权收益权投资类</dd>
+                            <dd>资产证券化类</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon leaseIcon"></i></div>
+                        <dl>
+                            <dt>融资租赁</dt>
+                            <dd>融资型售后租赁</dd>
+                            <dd>新购设备融资租赁</dd>
+                            <dd>新购设备经营租赁</dd>
+                            <dd>厂商租赁</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon fundIcon"></i></div>
+                        <dl>
+                            <dt>基金</dt>
+                            <dd>基础设施建设基金</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="debtIconBox"><i class="debtIcon pppIcon"></i></div>
+                        <dl>
+                            <dt>PPP项目</dt>
+                            <dd>资本金融资</dd>
+                            <dd>项目贷款</dd>
+                            <dd>ppp专项债</dd>
+                            <dd>ppp资产证券化</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="equityFinancingBox">
+            <h5>股权融资</h5>
+            <div class="equityListBox">
+                <ul class="equityList clearfix">
+                    <li>
+                        <div class="equityIconBox fl"><i class="equityIcon startIcon"></i></div>
+                        <div class="fundList fr">
+                            <h6>创业基金</h6>
+                            <p>种子基金</p>
+                            <p>初创期基金</p>
+                            <p>成长期基金</p>
+                            <p>Pre-IPO基金</p>
+                            <p class="fundDesc">主要投资中小型、未上市的成长企业</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="equityIconBox fl"><i class="equityIcon assetIcon"></i></div>
+                        <div class="fundList fr">
+                            <h6>资产类基金</h6>
+                            <p>PPP基金</p>
+                            <p>基础设施基金</p>
+                            <p>房地产投资基金</p>
+                            <p>融资租赁基金</p>
+                            <p class="fundDesc">主要投资于基础设施，收益型房地产等，具有稳定现金流的资产</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="equityIconBox fl"><i class="equityIcon mergerIcon"></i></div>
+                        <div class="fundList fr">
+                            <h6>并购重组基金</h6>
+                            <p>MBO基金（管理层回购）</p>
+                            <p>LBO基金（杠杆回收）</p>
+                            <p>并购基金</p>
+                            <p>重组基金</p>
+                            <p class="fundDesc">以收购成熟企业为主，单体投资规模通常很大</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="equityIconBox fl"><i class="equityIcon otherPEIcon"></i></div>
+                        <div class="fundList fr">
+                            <h6>其他PE基金</h6>
+                            <p>PIPE：上市非公开发行的股份</p>
+                            <p class="fundDesc">夹层基金：优先股和初次债等</p>
+                            <p class="fundDesc">问题债券基金：不良债券</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="supplementBox">
+    <ul class="supplement">
+        <li><span class="listCircle"><i></i></span>联合多家不同类型金融机构/股权基金，提供多种资金渠道和债权股权融资模式，服务全疆企业</li>
+        <li><span class="listCircle"><i></i></span>企业在平台发布债权融资需求，金融机构或基金注册会员对业务可行性进行初步判断，对接企业</li>
+        <li><span class="listCircle"><i></i></span>金融机构及基金可发布融资项目准入标准，符合条件的企业可通过平台申请对接机构</li>
+        <li><span class="listCircle"><i></i></span>融资成功即向企业收取财务顾问费</li>
+    </ul>
+    <div class="supplementBg"></div>
+</div>
+<!--企业理财需求及金融机构资金端需求-->
+##<div class="fundDemandBox">
+##    <h5>企业理财需求及金融机构资金端需求</h5>
+##    <ul class="fundDemandList clearfix">
+##        <li>
+##            <div class="demandNum">1</div>
+##            <p>金融机构发布相关产品</p>
+##        </li>
+##        <li>
+##            <div class="demandNum">2</div>
+##            <p>企业预约认购产品</p>
+##        </li>
+##        <li>
+##            <div class="demandNum">3</div>
+##            <p>平台撮合交易</p>
+##        </li>
+##        <li>
+##            <div class="demandNum">4</div>
+##            <p>平台收取销售费用</p>
+##        </li>
+##    </ul>
+##    <div class="fundStyle">
+##        <span class="fundRedLine fl"></span>
+##        帮助企业更高效的利用闲置资金，解决金融机构资金端需求
+##        <span class="fundRedLine fr"></span>
+##    </div>
+##    <ul class="fundStyleList clearfix">
+##        <li><span class="styleCircle"></span>银行（银行理财产品存款）</li>
+##        <li><span class="styleCircle"></span>信托公司（信托计划）</li>
+##        <li><span class="styleCircle"></span>劵商（债券/资管计划/ABS）</li>
+##        <li><span class="styleCircle"></span>基金（基金份额）</li>
+##    </ul>
+##</div>
+<!--企业并购需求及金融机构服务端需求-->
+##<div class="mergerDemandBox">
+##    <div class="mergerDemand">
+##        <h5>企业并购需求及金融机构服务端需求</h5>
+##        <p class="mergerOutline">企业快速良好发展除了自身经营外，并购重组也是重要的手段，如果需要，平台还可以提供支持并购的融资需求。</p>
+##        <ul class="mergerList clearfix">
+##            <li>
+##                <div><img src="../img/merger1.png"/> </div>
+##                <h6>卖方顾问服务</h6>
+##                <p>为拟上市公司或寻求更大发展平台的公司提供异于首次公开发行股票（IPO）的解决方案。</p>
+##                <p class="mergerDetail">具体服务包括：帮助公司识别挑选潜在买方，帮助卖方进行战略交易结构谈判。为每个企业量身设计最适合与富竞争优势的谈判过程，帮助企业实现价值最大化。</p>
+##            </li>
+##            <li>
+##                <div><img src="../img/merger2.png"/> </div>
+##                <h6>买方服务</h6>
+##                <p>面向希望通过行业整合快速扩张市场及产品线，或扩大规模优势的公司。</p>
+##                <p class="mergerDetail">具体服务包括：制定交易战略，识别潜在交易对象，并为交易结构和谈判提供咨询服务。为买方设计最优交易方案，第一时间建立交易对象信任，帮助买方实现竞争力最大化。</p>
+##            </li>
+##            <li>
+##                <div><img src="../img/merger3.png"/> </div>
+##                <h6>兼并收购与资产重组</h6>
+##                <p>近年并购市场快速发展的交易形式。发现、撮合并执行行业内企业合并、业务分拆，转型重组等复杂交易。</p>
+##            </li>
+##        </ul>
+##    </div>
+##</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="/js/index/index.js"></script>
+</body>
+</html>

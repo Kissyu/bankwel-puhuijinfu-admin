@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>普惠金服系统</title>
+    <link href="/styles/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="/styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/easyui/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/compent/ztree/css/zTreeStyle/zTreeStyle.css">
+	<link rel="stylesheet" href="/styles/easyui/icon.css" />
+	<link rel="stylesheet" href="/styles/main.css" />
+	<link rel="stylesheet" href="/styles/index.css" />
+	<style type="text/css">
+        #navPanel .easyui-linkbutton {
+        	width: 100%;
+        	display: block;
+        	border-bottom: 1px solid gray;
+        	height: 25px;
+        	padding-top: 10px;
+        	font-weight: bold;
+        	-webkit-border-radius: 0;
+        	border-radius: 0;
+        }
+        
+        #mainTabs .panel-body {
+        	overflow: hidden;
+        }
+        
+        #navPanel .accordion-collapse,#navPanel .accordion-expand {
+        	display: none;
+        }
+		.headSelect {
+			padding:0 2px;
+			float: left;
+			margin:0 5px 0 0;
+			height: 25px;
+            line-height: 25px;
+			width: 180px;
+		}
+	</style>
+    <script>
+        var token = "${DukeToken}";
+    </script>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+	<div class="sky"></div>
+	<div id="jplayer"></div>
+	<div data-options="region:'north',border:false,split:false,minHeight:0" id="bannerBg" class="bannerBg" style="height:60px;">
+		<div class="header_wrap clearfix">
+			<h1 class="logo">普惠金服</h1>
+			<ul id="topTabs" class="nav_wrap">
+				#foreach($t in $topTabs)
+                    <li class="nav_item"><a  href="javascript:;" url="$!t.url">$!t.name</a></li>
+				#end
+			</ul>
+			<div class="deail_info">
+                <input type="hidden" value="$!operator.seq_id" id="userId">
+				<p class="tip_info">您好，$!operator.operate_name,$date.get('yyyy年M月d日')</p>
+                <a id="doLogout">退出</a>
+                <a id="doModifyPwd">修改密码</a>
+			</div>
+            <div style="float: right;">
+                <ul style="list-style:none; margin:0; padding:0;line-height:100%;">
+                    <li style="float: left;">
+                        <p style="margin:0;line-height:30px;">选择应用中心</p>
+                        <select name="apply_center_seq_id" id="applySele" class="headSelect">
+							#foreach($!item in $!applyList)
+								#if($!item.apply_seq_id == $!apply_seq_id)
+                                    <option value="$!item.apply_seq_id" selected>$!item.apply_name</option>
+								#else
+                                    <option value="$!item.apply_seq_id">$!item.apply_name</option>
+								#end
+							#end
+                        </select>
+                    </li>
+                    <li style="float: left;">
+                        <p style="margin:0; line-height:30px;">选择组织机构</p>
+                        <select name="branch_seq_id" id="branchSele" class="headSelect">
+							#foreach($item in $!branchList)
+                                <option value="$!item.branch_seq_id">$!item.branch_name</option>
+							#end
+                        </select>
+                    </li>
+                </ul>
+            </div>
+		</div>
+	</div>
+    <div class="easyui-layout" data-options="region:'west',split:false,title:'导航'" style="width: 150px; overflow: auto;" id="bodyWest">
+##		<div id="navPanel" class="easyui-accordion" data-options="fit:true">
+##			#foreach($n in $adminNavList)
+##				<div title="$n.navName" iconCls="$!n.iconClass" style="overflow-x:hidden;">
+##					#foreach($c in $n.childList)
+##						<a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'$!c.iconClass',plain:true"
+##							url="$!c.url" icon="$!c.iconClass">
+##							$!c.navName
+##						</a>
+##					#end
+##				</div>
+##			#end
+##		</div>
+		<div class="zTreeDemoBackground left">
+			<ul id="mainMenuTree" class="ztree"></ul>
+		</div>
+
+	</div>
+	<div data-options="region:'center',border:false,noheader:true" id="bodyCenter">
+		<div id="mainTabs" class="easyui-tabs" data-options="fit:true,tools:'#tab-tools'">
+
+		</div>
+	</div>
+	<div id="tab-tools">
+		<a href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-expand-up',plain:true" id="ceBanner" title="收起" style="padding-right:0px;"></a>
+		<a href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-close-window',plain:true" id="closeAllBtn" title="关闭所有标签页" style="padding-right:0px;"></a>
+	</div>
+	<div id="tab-menu" class="easyui-menu" style="width: 100px;">
+		<div id="menu-refresh">刷新</div>
+		<div class="menu-sep"></div>
+		<div id="menu-close">关闭</div>
+		<div id="menu-closeOthers">关闭其它</div>
+		<div id="menu-closeAll">关闭所有</div>
+	</div>
+	<div id="modifyPwdWin" class="easyui-window" title="修改密码" style="width: 360px; height: 300px;"
+		data-options="closed:true,modal:true,collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    	<div class="easyui-layout" fit="true" id="bookmarkNameLayout">
+    		<div region="center">
+				<form id="modifyPwdForm" style="padding:10px 0 0 20px;">
+    				<div>
+        				<label>旧密码：</label>
+    					<input type="password" id="oldPwd" style="width: 200px;"/>
+    					<span id="errorMsg"><font class="error" style="font:12px/1.5 Tahoma, Geneva, sans-serif;color:red;"></font></span>
+    				</div>
+    				<div>
+    					<label>新密码：</label>
+    					<input type="password" id="newPwd" style="width: 200px;"/>
+    					<span id="errorMsg1"><font class="error" style="font:12px/1.5 Tahoma, Geneva, sans-serif;color:red;"></font></span>
+    				</div>
+    				<div>
+    					<label>确认新密码：</label>
+    					<input type="password" id="confirmPwd" style="width: 200px;"/>
+    					<span id="errorMsg2"><font class="error" style="font:12px/1.5 Tahoma, Geneva, sans-serif;color:red;"></font></span>
+    				</div>
+				</form>
+    		</div>
+    		<div region="south" noheader="true" style="height: 35px;text-align: center;vertical-align:middle;padding-top: 4px;">
+    			<a href="#" id="modifyPwd_ok" class="easyui-linkbutton" plain="true" iconCls="icon-save">确定</a>
+    			<a href="#" id="modifyPwd_cancel" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">取消</a>
+    		</div>
+    	</div>
+    </div>
+  </body>
+
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/js/easyui/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/js/common/util.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.md5.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.livequery.js"></script>
+<script type="text/javascript" src="/compent/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+##<script type="text/javascript" src="/compent/ztree/js/jquery.ztree.excheck.js"></script>
+</html>

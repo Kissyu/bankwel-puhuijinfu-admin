@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>机构授权</title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authBranch/branchAuth.js"></script>
+
+    <style type="text/css">
+        th,td{
+            text-align: center;
+        }
+        .tb {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .tb li {
+            float: left;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: 6px;
+        }
+        .addBranchForm {
+            wudth: 600px;
+        }
+        .branchGui {
+            width: 88px;
+            display: inline-block;
+            text-align: right;
+            float: left;
+            padding: 6px 10px;
+            font-weight:bold;
+        }
+        .submitBox{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .submitBranch{
+            width:150px;
+            height:30px;
+            line-height: 30px;
+            margin-left: -150px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            border-radius:10px;
+            display: inline-block;
+        }
+        .submitBranch:hover{
+            background: #eaf2ff;
+        }
+        .treeTit {
+            width: 80%;
+            margin: 5px auto;
+            font-weight: bold;
+            text-align: center;
+        }
+        .authPanel {
+            padding-top: 45px;
+        }
+        .authTab {
+            width: 100%;
+            height: 30px;
+        }
+        .authTab i {
+            display: inline-block;
+            line-height: 30px;
+            text-align: center;
+            padding-top:45px;
+            float: left;
+            background-color: #e0ecff;
+            border-right:1px solid #95B8E7;
+        }
+        .i1 {
+            width: 100%;
+        }
+        .i2 {
+            width: 76%;
+        }
+        .saveAuth {
+            width: 88px;
+            height: 28px;
+            line-height: 18px;
+            font-size: 14px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            border-radius: 3px;
+            background-color:#e0ecff;
+        }
+        .saveAuth:hover {
+            background-color: #95B8E7;
+        }
+    </style>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'north',border:false" id="searchPane" style="height:66px;background-color:#f5f5f5;overflow:hidden;">
+    <input type="hidden" value="$!seq_id" id="seq_id">
+    <form id="searchForm">
+        <ul class="tb clearfix">
+            <li class="fl">
+                <div style="margin-left:10px;">
+                    <strong>组织机构名称：</strong>
+                    <input type="text" style="width:130px;" value="$!name" readonly/>
+                </div>
+            </li>
+            <li class="fl" style="margin-left:30px;margin-top:2px;">
+                <div>
+                    <a id="saveAuth" href="javascript:;" class="easyui-linkbutton">
+                        保存
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<div data-options="region:'center',border:false" style="overflow:hidden; top:66px; " class="con">
+    <table id="apply_center_grid"></table>
+</div>
+</body>
+
+</html>

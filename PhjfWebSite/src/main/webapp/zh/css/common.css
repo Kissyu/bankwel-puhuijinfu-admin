@@ -1,0 +1,105 @@
+/*reset*/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
+fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+	line-height:100%;
+}
+body{ -webkit-tap-highlight-color:rgba(0,0,0,0); }
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+	table-layout:fixed;
+}
+fieldset,img,input {
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var,i {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym {
+	border:0;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+textarea {
+	padding: 4px 10px 4px 10px;
+	line-height: 20px;
+	outline: none;
+	resize: none;
+}
+/*clearfix*/
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+	overflow: hidden;
+}
+.clearfix {
+	zoom: 1;
+	/* IE < 8 */
+}
+input {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+input[type='button'] {
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+/*去焦点框*/
+a:focus, input:focus {
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+input::-moz-focus-inner {
+	border: 0
+}
+input,textarea {
+	border: 0;
+	-webkit-appearance: none;
+}
+/* FireFox*/
+body, html {
+	width: 100%;
+	font-size: 14px;
+	background-color:#fff;
+	font-family: "Microsoft YaHei", Helvetica, STHeiTi, sans-serif;
+}
+/*单行文本、多余字数省略*/
+.nowrap-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*单个样式类*/
+.bold { font-weight: bold;}
+.handcursor { cursor: pointer;}
+.fl{float:left;}
+.fr{float:right;}
+.pr { position: relative;}
+.inlineblock { display: inline-block;}
+.hide { display: none;}
+.posr {position: relative;}
+.posa {  position: absolute;}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div data-options="region:'north',border:false" id="searchPane" style="height:100px;background-color:#f5f5f5;overflow:hidden;">
+    <form id="searchForm">
+        <ul class="tb">
+            <li>
+                <div>
+                    <strong>开户行：</strong>
+                    <input id="bank_name" name="bank_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                <div>
+                    <strong>办理点名称：</strong>
+                    <input id="mp_name" name="mp_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                <div>
+                    <strong>真实姓名：</strong>
+                    <input id="true_name" name="true_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                </li>
+            <li>
+                <div>
+                    <strong>手机号：</strong>
+                    <input id="mobile" name="mobile"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                <div>
+                    <strong>状态：</strong>
+                    <select  id="status" data-options="editable:false" style="width: 150px" name="status" class="easyui-combobox" data-options="editable:false">
+                        <option value="">---请选择---</option>
+                        #foreach($library in $data)
+                            <option value="$library.code">$library.name</option>
+                        #end
+                    </select>
+                </div>
+                <div style="text-align: center">
+                    <a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+                        查询
+                    </a>
+                    <a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+                        清除
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div data-options="region:'center',border:false" style="overflow:hidden;">
+    <table id="phjfUserBankcardAppointment_grid"></table>
+    <div id="right_menu" class="easyui-menu" style="width: 120px;">
+        <div iconCls="icon-look" id="viewItem">查看</div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="${path}/js/admin/user/userBankcardAppointment/userBankcardAppointmentQuery.js"></script>
+</html>

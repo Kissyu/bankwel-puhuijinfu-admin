@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <link href="/zh/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/zh/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/zh/css/global.css">
+</head>
+<body>
+<% if(data.indexNews.~size!=0){%>
+<div class="newsBox">
+    <div class="productListBox">
+        <div class="plateBox clearfix">
+            <p class="plateTitle">公司新闻</p>
+            <p class="nameUnderline"></p>
+        </div>
+        <p class="englishName">NEWS</p>
+        <div class="clearfix">
+            <ul class="newsImgList">
+                <% for(news in data.indexNews){%>
+                <li class="<% if(newsLP.index == 1){%> newsImgShow <%}%>">
+                    <div class="newsImgLink clearfix"><a href="${news.url}" target="_blank"><img src="${news.logo}"/></a></div>
+                    <div class="newsOutline">
+                        <h6>${news.title}</h6>
+                    </div>
+                </li>
+                <%}%>
+            </ul>
+            <div class="newsListBox">
+                <P class="getMoreNews"><a href="javascript:;" target="_blank">更多<i></i></a></P>
+                <ul class="companyNews">
+                    <% for(news in data.indexNews){%>
+                    <li class="<% if(newsLP.index == 1){%> mouseOverNews <%} if(newsLP.last){%> lastNew <%}%>">
+                        <a href="${news.url}" target="_blank">·  ${news.title}</a>
+                        <span>${news.publish_date}</span>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<%}%>
+<script type="text/javascript" src="/zh/js/lib/jquery1.8.2.min.js"></script>
+<script type="text/javascript" src="/zh/js/index/indexNews.js"></script>
+</body>
+</html>

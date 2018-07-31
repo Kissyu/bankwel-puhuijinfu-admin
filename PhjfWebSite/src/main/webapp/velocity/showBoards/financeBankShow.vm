@@ -1,0 +1,378 @@
+#set($scriptSlider=true)
+#parse("/velocity/include/header.vm")
+
+<link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+<style type="text/css">
+    .info {
+        border: solid 1px silver;
+    }
+    div.info-top {
+        position: relative;
+        background: none repeat scroll 0 0 #F9F9F9;
+        border-bottom: 1px solid #CCC;
+        border-radius: 5px 5px 0 0;
+    }
+    div.info-top div {
+        display: inline-block;
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 31px;
+        padding: 0 10px;
+    }
+    div.info-top img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition-duration: 0.25s;
+    }
+    div.info-top img:hover {
+        box-shadow: 0px 0px 5px #000;
+    }
+    div.info-middle {
+        font-size: 12px;
+        padding: 6px;
+        line-height: 20px;
+    }
+    div.info-bottom {
+        height: 0px;
+        width: 100%;
+        clear: both;
+        text-align: center;
+    }
+    div.info-bottom img {
+        position: relative;
+        z-index: 104;
+    }
+    /*span {*/
+        /*margin-left: 5px;*/
+        /*font-size: 11px;*/
+    /*}*/
+    .info-middle img {
+        float: left;
+        margin-right: 6px;
+    }
+</style>
+<script src="https://webapi.amap.com/maps?v=1.4.7&key=fa04b6a7e3aa1f386f39978cb8b888c4&plugin=AMap.DistrictSearch"></script>
+<!--引入UI组件库（1.0版本） -->
+<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script type="text/javascript" src="/ajax/commonAjax.js"></script>
+<style type="text/css">
+    #tip {
+        background-color: #fff;
+        padding:0 10px;
+        border: 1px solid silver;
+        box-shadow: 3px 4px 3px 0px silver;
+        position: absolute;
+        font-size: 12px;
+        right: 10px;
+        top: 90px;
+        border-radius: 3px;
+        line-height: 36px;
+        z-index: 1;
+    }
+</style>
+
+<div id="tip">
+    <select id='province' style="width:132px" >
+        <option value="province">新疆维吾尔自治区</option>
+    ##        <option id="1"> 1</option>
+    ##        <option id="2"> 2</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;
+    <select id="type" onchange='typeChange()'>
+        <option value="0">--请选择网点类型--</option>
+        <option value="1">银行网点</option>
+        <option value="2">银行ATM网点</option>
+        <option value="3">助农网点</option>
+        <!--
+        #foreach($item in $!data.bankTypeList)
+            <option value="$item.bt_code">$item.bt_name</option>
+        #end
+        -->
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;
+    <select id="bankType" onchange='bankChange()'>
+        <option value="">--选择银行--</option>
+        <option value="BT12545">招商银行</option>
+        <option value="BT10001">乌鲁木齐银行</option>
+        <option value="BT10002">昆仑银行</option>
+        <!--
+        #foreach($item in $!data.bankTypeList)
+            <option value="$item.bt_code">$item.bt_name</option>
+        #end
+        -->
+    </select>
+
+</div>
+<div id="map_container" style="width:100%;height:717px;">
+
+
+</div>
+
+<script>
+        var map, district, polygons = [], citycode;
+        var citySelect = document.getElementById('city');
+        var districtSelect = document.getElementById('district');
+        var beforelat ="43.825423";
+        var beforelng="87.616768";
+        var beforeGeoHash = CommonPubAjax.getGeoHash(beforelat,beforelng,"5");
+        var lastLng = "87.616768";
+        var lastlat = "43.825423";
+        var lastGeoHash = "";
+        var lastType = "0";
+        var bankList = new Array();
+        var bankATMList = new Array();
+        var managerPointList = new Array();
+        var SimpleMarker = null;
+
+        map = new AMap.Map('map_container', {
+            resizeEnable: true,
+            center: [lastLng,lastlat],
+            zoom: 13
+        });
+
+        //行政区划查询
+        var opts = {
+            subdistrict: 1,   //返回下一级行政区
+            showbiz:false  //最后一级返回街道信息
+        };
+
+
+        function setCenter(obj){
+            map.setCenter(obj[obj.options.selectedIndex].center)
+        }
+
+
+
+    function search(obj) {
+        //清除地图上所有覆盖物
+        for (var i = 0, l = polygons.length; i < l; i++) {
+            polygons[i].setMap(null);
+        }
+        var option = obj[obj.options.selectedIndex];
+        var keyword = option.text; //关键字
+        var adcode = option.adcode;
+        district.setLevel(option.value); //行政区级别
+        district.setExtensions('all');
+        //行政区查询
+        //按照adcode进行查询可以保证数据返回的唯一性
+        district.search(adcode, function(status, result) {
+            if(status === 'complete'){
+                getData(result.districtList[0],obj.id);
+            }
+        });
+    }
+
+    var moveEventListener = map.on('moveend', function(e) {
+
+
+        //获取geohash
+       var geoHash = CommonPubAjax.getGeoHash(map.getCenter().lat,map.getCenter().lng,"5");
+        //alert(map.getCenter().lat+"  "+map.getCenter().lng+"  "+geoHash);
+        if(geoHash==beforeGeoHash){
+            //alert("不需要查询");
+        }else {
+            beforeGeoHash = geoHash;
+            bankChange();
+        }
+    });
+
+    var simpleMarker;
+    var markers = []
+    function marker(lng, lat, name){
+        var iconL = '网';
+        if(type == '1'){
+            iconL = 'ATM';
+        }else if(type == '2'){
+            iconL = '助';
+        }
+        simpleMarker = new AMap.Marker({
+            //前景文字
+            iconLabel: iconL,
+            position : [lng,lat],
+            map : map
+        });
+        simpleMarker.setTitle(name);
+        markers.push(simpleMarker);
+    }
+
+    function markerSimp(lng, lat, name,type,address,telephone){
+        var iconL = '网';
+        if(type == '1'){
+            iconL = 'A';
+        }else if(type == '2'){
+            iconL = '助';
+        }
+        var simpleMarker = new SimpleMarker({
+            //前景文字
+            iconLabel: {
+                innerHTML: '<i>'+iconL+'</i>', //设置文字内容
+                style: {
+                    color: '#fff' //设置文字颜色
+                }
+            },
+            //图标主题
+            iconTheme: 'default',
+
+            //背景图标样式
+            iconStyle: {
+
+                src: '//webapi.amap.com/theme/v1.3/markers/b/mark_r.png',
+                style: {
+                    width: '22px',
+                    height: '35px'
+                }
+            },
+            position : [lng,lat],
+            zIndex: 200,
+            map : map
+        });
+        simpleMarker.setTitle(name);
+
+        var title = name,
+                content = [];
+        content.push("地址："+address);
+        if(null!=telephone&&""!=telephone){
+            content.push("电话："+telephone);
+        }
+        //content.push("<a href='https://ditu.amap.com/detail/B000A8URXB?citycode=110105'>详细信息</a>");
+
+        var infoWindow = new AMap.InfoWindow({
+            isCustom: true,  //使用自定义窗体
+            content: createInfoWindow(title, content.join("<br/>")),
+            offset: new AMap.Pixel(16, -50)
+        });
+        //鼠标点击marker弹出自定义的信息窗体
+        AMap.event.addListener(simpleMarker, 'click', function() {
+            infoWindow.open(map, simpleMarker.getPosition());
+        });
+        markers.push(simpleMarker);
+    }
+
+        //构建自定义信息窗体
+        function createInfoWindow(title, content) {
+            var info = document.createElement("div");
+            info.className = "info";
+
+            //可以通过下面的方式修改自定义窗体的宽高
+            //info.style.width = "400px";
+            // 定义顶部标题
+            var top = document.createElement("div");
+            var titleD = document.createElement("div");
+            var closeX = document.createElement("img");
+            top.className = "info-top";
+            top.style.backgroundColor = 'white';
+            titleD.innerHTML = title;
+            closeX.src = "https://webapi.amap.com/images/close2.gif";
+            closeX.onclick = closeInfoWindow;
+
+            top.appendChild(titleD);
+            top.appendChild(closeX);
+            info.appendChild(top);
+
+            // 定义中部内容
+            var middle = document.createElement("div");
+            middle.className = "info-middle";
+            middle.style.backgroundColor = 'white';
+            middle.innerHTML = content;
+            info.appendChild(middle);
+
+            // 定义底部内容
+            var bottom = document.createElement("div");
+            bottom.className = "info-bottom";
+            bottom.style.position = 'relative';
+            bottom.style.top = '0px';
+            bottom.style.margin = '0 auto';
+            var sharp = document.createElement("img");
+            sharp.src = "https://webapi.amap.com/images/sharp.png";
+            bottom.appendChild(sharp);
+            info.appendChild(bottom);
+            return info;
+        }
+
+        //关闭信息窗体
+        function closeInfoWindow() {
+            map.clearInfoWindow();
+        }
+
+    function bankChange(){
+        if(markers != null){
+            map.remove(markers);
+        }
+        lastType = $("#type").val();
+        var data = CommonPubAjax.queryBank($("#bankType").val(),lastType, map.getCenter().lat, map.getCenter().lng);
+        bankList = data.bankInfoList;
+        bankATMList = data.bankAtmList;
+        managerPointList = data.managerPointList;
+        markData(lastType);
+
+    }
+
+        function typeChange(){
+            var typeValue = $("#type").val();
+            if('3'==typeValue){
+                var bankType = $('#bankType');
+                bankType.val('');
+                $("#bankType").attr("disabled",true);
+            }else{
+                $("#bankType").attr("disabled",false);
+            }
+            if(lastType == "0"){
+                markData(typeValue);
+            }else {
+                bankChange();
+            }
+
+
+        }
+
+        function markData(thisType){
+            if(markers != null){
+                map.remove(markers);
+            }
+            if((thisType == '0' || thisType == '1')&& null != bankList && null != bankList.length){
+                for (var i = 0; i < bankList.length; i++){
+                    var lng = bankList[i].lng;
+                    var lat = bankList[i].lat;
+                    if (lng != null && lat != null){
+                        markerSimp(lng, lat, bankList[i].name,'3',bankList[i].address,bankList[i].telephone);
+                       // marker(lng, lat, bankList[i].name);
+                    }
+                }
+            }
+            if((thisType == '0' || thisType == '2')&& null != bankATMList && null != bankATMList.length){
+                for (var i = 0; i < bankATMList.length; i++){
+                    var lng = bankATMList[i].lng;
+                    var lat = bankATMList[i].lat;
+                    if (lng != null && lat != null){
+                        markerSimp(lng, lat, bankATMList[i].name,'1',bankATMList[i].address,bankATMList[i].telephone);
+                       // marker(lng, lat, bankATMList[i].name);
+                    }
+                }
+            }
+            if((thisType == '0' || thisType == '3')&&null != managerPointList && null != managerPointList.length){
+                for (var i = 0; i < managerPointList.length; i++){
+                    var lng = managerPointList[i].lng;
+                    var lat = managerPointList[i].lat;
+                    if (lng != null && lat != null){
+                        markerSimp(lng, lat, managerPointList[i].name,'2',managerPointList[i].address,managerPointList[i].telephone);
+                       // marker(lng, lat, managerPointList[i].name);
+                    }
+                }
+            }
+        }
+
+        AMapUI.loadUI(['overlay/SimpleMarker'], function(SimpleMarker) {
+            this.SimpleMarker = SimpleMarker;
+            //启动页面
+            bankChange();
+            //initPage(SimpleMarker);
+        });
+</script>
+
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="/js/index/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',border:false" id="searchPane" style="height:90px;background-color:#f5f5f5;overflow:hidden;">
+		<form id="searchForm">
+            <input type="hidden" id="mp_code" value="$!mp_code" name="mp_code"/>
+    		<ul class="tb">
+    			<li>
+					<div >
+						<strong>办理点名称：</strong>
+                        <input id="mp_name" name="mp_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+					</div>
+                    <div >
+                        <strong>银行名称：</strong>
+                        <input id="bank_name" name="bank_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div >
+                        <strong style="width:105px;">是否可预约开户 ：</strong>
+						<select id="is_open_account" name="is_open_account" data-options="editable:false" class="easyui-combobox" style="width:150px">
+                            <option value="">---请选择---</option>
+							#foreach($library in $data)
+							  <option value="$library.code">$library.name</option>
+							#end
+						</select>
+                    </div>
+				</li>
+				<li>
+					<div style="float: right;">
+    					<a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+    						查询
+    					</a>
+						<a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+    						清除
+    					</a>
+    				</div>
+    			</li>
+    		</ul>
+    	</form>
+	</div>
+	
+    <div data-options="region:'center',border:false" style="overflow:hidden;">
+		<table id="mpBanktype_grid"></table>
+
+	</div>
+</body>
+
+<script type="text/javascript" src="${path}/js/admin/managepoint/managepointBanktype/mpBankTypeQuery.js"></script>
+</html>

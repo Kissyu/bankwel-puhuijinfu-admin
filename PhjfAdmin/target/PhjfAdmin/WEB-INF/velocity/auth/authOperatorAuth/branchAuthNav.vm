@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改账户</title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authOperatorAuth/branchAuthNav.js"></script>
+
+    <style type="text/css">
+        th,td{
+            text-align: center;
+        }
+        .tb {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .tb li {
+            float: left;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: 6px;
+        }
+        .addBranchForm {
+            wudth: 600px;
+        }
+        .branchGui {
+            width: 88px;
+            display: inline-block;
+            text-align: right;
+            float: left;
+            padding: 6px 10px;
+            font-weight:bold;
+        }
+        .submitBox{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .submitBranch{
+            width:150px;
+            height:30px;
+            line-height: 30px;
+            margin-left: -150px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            border-radius:10px;
+            display: inline-block;
+        }
+        .submitBranch:hover{
+            background: #eaf2ff;
+        }
+        .treeTit {
+            width: 80%;
+            margin: 5px auto;
+            font-weight: bold;
+            text-align: center;
+        }
+        .authPanel {
+            padding-top: 45px;
+        }
+        .authTab {
+            width: 100%;
+            height: 30px;
+        }
+        .authTab i {
+            display: inline-block;
+            line-height: 30px;
+            text-align: center;
+            padding-top:50px;
+            float: left;
+            background-color: #e0ecff;
+            border-right:1px solid #95B8E7;
+        }
+        .i1 {
+            width: 22%;
+        }
+        .i2 {
+            width: 76%;
+        }
+        .saveAuth {
+            width: 88px;
+            height: 28px;
+            line-height: 18px;
+            font-size: 14px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            border-radius: 5px;
+            background-color:#e0ecff;
+        }
+        .saveAuth:hover {
+            background-color: #95B8E7;
+        }
+    </style>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'north',border:false" id="treePane" style="height:50;background-color:#f5f5f5;overflow:hidden;" class="clearfix">
+   #* <h3 style="margin-left:10px;font-weight: bold;padding: 10px 0;font-size: 15px;">账户信息</h3>*#
+    <input type="hidden" value="$!branch_seq_id">
+    <input type="hidden" value="$!operator_seq_id" id="operatorId">
+    <ul class="tb clearfix">
+        <li>
+            <div style="margin-left:20px;">
+                <strong>账户名称：</strong>
+                <input type="text" style="width:130px;" value="$!operator_seq_name" readonly/>
+            </div>
+        </li>
+        <li>
+            <div style="margin-left:10px;">
+                <strong>所属机构：</strong>
+                <input type="text" style="width:130px;" value="$!branch_seq_name" readonly/>
+            </div>
+        </li>
+        <li>
+            <div style="margin-left:40px;">
+                <button class="saveAuth hide" id="saveAuth">保存</button>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="authTab clearfix">
+    <i class="i1">组织机构</i>
+    <i class="i2">角色列表</i>
+</div>
+<div class="authPanel">
+    <ul style="width: 100%;" class="clearfix">
+        <li style="width: 22%; float:left;height: 460px; overflow: scroll;">
+            <div class="zTreeDemoBackground">
+                <ul id="mainBranchTree" class="ztree"></ul>
+            </div>
+        </li>
+        <li style="width:0;border-left:1px solid #95B8E7;height: 460px; float:left;"></li>
+        <li style="width: 76%; float:left; height: 460px; overflow: scroll;">
+            <table id="roleManage_grid"></table>
+        </li>
+    </ul>
+</div>
+</body>
+
+
+</html>

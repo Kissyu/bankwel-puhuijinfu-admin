@@ -1,0 +1,17 @@
+#parse("/velocity/include/header.vm")
+<div class="aboutContainer">
+    <div class="aboutMain clearfix">
+        #parse("/velocity/include/leftNav.vm")
+        <div class="contentBox fl">
+            <h4>企业介绍</h4>
+            <span class="titDesline"></span>
+            <p class="comIntroPlate">新疆丝路普惠金融信息服务有限公司是一家旨在提供更好的普惠金融服务的科技企业，于2017年1月在中国人民银行乌鲁木齐中心支行、新疆金融学会的指导和推动下成立，致力于以科技创新驱动普惠金融发展。公司是自治区指定的负责新疆“互联网+普惠金融”平台及疆内金融服务平台建设和运营的唯一商业实体，并于2017年4月被选为新疆金融学会普惠金融专业委员会的会员单位。</p>
+        </div>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="js/about/about.js"></script>
+</body>
+</html>

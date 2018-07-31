@@ -1,0 +1,49 @@
+#parse("/velocity/include/header.vm")
+<div class="aboutContainer">
+    <div class="aboutMain clearfix">
+        #parse("/velocity/include/leftNav.vm")
+        <div class="contentBox fl">
+            <h4>管理团队</h4>
+            <span class="titDesline"></span>
+            <ul>
+                <li class="teamContainer clearfix">
+                    <img src="/img/leader_01.png" alt="leader" class="fl">
+                    <div class="fl leaderIntro">
+                        <h3><em class="leaderName">王清</em><em class="leaderCre">董事长</em></h3>
+                        <p>美国麻省理工学院博士，现任新疆丝路普惠金融信息服务有限公司董事长，新疆金融学会普惠金融专业委员会常务副主任，北京银库董事长兼总裁，曾任美国花旗银行北美保险代理业务CFO、中国银行总行个金部副总经理、德意志银行中国总行副行长以及中国城建集团副总裁等职务。拥有近20年的金融业高层管理经验，是公司金融、战略、投资、并购等方面顶尖专家。
+                        </p>
+                    </div>
+                </li>
+                <li class="teamContainer clearfix">
+                    <img src="/img/leader_02.png" alt="leader" class="fl">
+                    <div class="fl leaderIntro">
+                        <h3><em class="leaderName">聂蕴韬</em><em class="leaderCre">董事</em><em class="leaderCre">总经理</em></h3>
+                        <p>悉尼大学硕士，现任新疆丝路普惠金融信息服务有限公司董事兼总经理，北京银库副总裁，曾任职于德意志银行中国及中德证券，负责多项战略投资合作项目。拥有近10年的金融业务管理经验，是企业融资和项目管理等方面顶尖专家。
+                        </p>
+                    </div>
+                </li>
+                <li class="teamContainer clearfix">
+                    <img src="/img/leader_04.png" alt="leader" class="fl">
+                    <div class="fl leaderIntro">
+                        <h3><em class="leaderName">胡亚洲</em><em class="leaderCre">董事</em><em class="leaderCre">副总经理</em></h3>
+                        <p>中国科学院理论物理研究所博士，现任新疆丝路普惠金融信息服务有限公司董事兼副总经理，新疆金融学会普惠金融专业委员会副秘书长。
+                        </p>
+                    </div>
+                </li>
+                <li class="teamContainer clearfix">
+                    <img src="/img/leader_03.png" alt="leader" class="fl">
+                    <div class="fl leaderIntro">
+                        <h3><em class="leaderName">苏李南</em><em class="leaderCre">董事</em><em class="leaderCre">技术总监</em></h3>
+                        <p>现任新疆丝路普惠金融信息服务有限公司技术总监，PMI管理协会会员，曾任职多家大型软件公司部门经理、互联网公司研发总监职务，十余年金融领域团队管理、技术研发、项目实施经验。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="js/about/about.js"></script>
+</body>
+</html>

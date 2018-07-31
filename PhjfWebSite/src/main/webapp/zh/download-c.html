@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="/zh/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/zh/css/swiper-4.2.0.min.css">
+    <style>
+        html, body {
+            width: 100%;
+            font-size: 22px;
+            font-family: "Microsoft YaHei", u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;
+        }
+        .mainContent {
+            width: 100%;
+            color: #333333;
+            background-color: #F8F8F8;
+        }
+        .shareHeader {
+            background-color: #fff;
+            width: 100%;
+            position: relative;
+        }
+        .shareHeader em {
+            display: block;
+            width: 100%;
+            height: 7rem;
+            background: url("/zh/img/share_header.png") center top no-repeat;
+            background-size:100% auto;
+        }
+        .shareHeader img {
+            width: 4.8rem;
+            height: 4.8rem;
+            position: absolute;
+            top: 2.2rem;
+            left: 0;
+            right:0;
+            margin: 0 auto;
+        }
+        .shareHeader h1 {
+            font-size: 0.7727rem;
+            color: #333333;
+            line-height: 1.5rem;
+            text-align: center;
+        }
+        .downloadBtn {
+            background-color: #fff;
+            width: 100%;
+            padding-top: 0.7rem;
+            padding-bottom: 1rem;
+        }
+        .downloadBtn a {
+            text-decoration: none;
+            display: block;
+            width: 46%;
+            height: 2.1rem;
+            margin: 0 auto;
+            border-radius: 0.6rem;
+            background-color: #fff;
+            text-align: center;
+            line-height: 2.1rem;
+            font-size: 0.69rem;
+        }
+        .downloadBtn .downAndroid {
+            border: 1px solid #FF1B43;
+            color: #FF1B43;
+            margin-bottom:  1.1rem;
+        }
+        .downIos {
+            border: 1px solid #333333;
+            color: #333333;
+        }
+        .downIcon {
+            display: inline-block;
+            word-break:break-all;
+            vertical-align:middle;
+            width: 1.1rem;
+            height: 1.1rem;
+            line-height: 2.1rem;
+            margin-right: 0.25rem;
+        }
+        .anDownIcon {
+            background: url("/zh/img/android_downIcon.png") center no-repeat;
+            background-size:cover;
+        }
+        .iosDownIcon{
+            background: url("/zh/img/ios_downIcon.png") center no-repeat;
+            background-size:cover;
+        }
+        .extra {
+            font-size: 0.68rem;
+            color: #BEBEBE;
+            text-align: center;
+            padding-bottom: 0.9rem;
+            background-color: #FFFFFF;
+        }
+        .shareInfo {
+            background-color: #fff;
+            margin-top: 0.3rem;
+        }
+        .swiper-container {
+            width: 100%;
+        }
+        .swiper-slide {
+            width: 50% !important;
+            float: left;
+        }
+        .shareInfo img {
+            display: block;
+            width: 150px;
+            height: 240px;
+            margin: 0 auto;
+        }
+        .shareDetail {
+            background-color: #fff;
+            padding: 0.48rem 4%;
+            width: 92%;
+            font-size: 0.7rem;
+            color: #333333;
+            line-height: 1.72rem;
+        }
+    </style>
+</head>
+<body>
+<div class="mainContent">
+    <div class="shareHeader">
+        <em></em>
+        <img src="/zh/img/share_logo.png" alt="">
+        <h1>普惠金服</h1>
+    </div>
+    <div class="downloadBtn">
+        <a href="javascript:;" class="downAndroid"> <span class="downIcon anDownIcon"></span><i>安卓版下载</i></a>
+        <a href="javascript:;" class="downIos"><span class="downIcon iosDownIcon"></span><i>IOS版下载</i></a>
+    </div>
+    <p class="extra">敬请期待</p>
+    <div class="shareInfo">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/zh/img/share_show1.png" alt="App展示"></div>
+                <div class="swiper-slide"><img src="/zh/img/share_show2.png" alt="App展示"></div>
+                <div class="swiper-slide"><img src="/zh/img/share_show3.png" alt="App展示"></div>
+                <div class="swiper-slide"><img src="/zh/img/share_show4.png" alt="App展示"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shareDetail">
+        新疆互联网+普惠金融平台是在国家“一带一路”大背景下，为贯彻国务院《关于印发推进普惠金融发展规划（2016-2020年）的通知》（国发〔2015〕74号）精神，促进新疆普惠金融创新发展，服务社会稳定和长治久安，由中国人民银行乌鲁木齐中心支行牵头推动的金融信息服务平台。平台是普惠金融信息服务平台，被列为自治区党委和政府2016年重点工作，并得到自治区人民银行、银监局、证监局、发改委、经信委、财政厅、金融办、网信办、通信管理局等九部门的联合发文支持（《关于落实普惠金融要求推进“新疆互联网+普惠金融平台”建设的实施意见》（乌银发〔2017〕52号））。
+    </div>
+</div>
+<script src="/zh/js/common/zepto.min.js"></script>
+<script src="/zh/js/common/swiper-4.2.0.min.js"></script>
+<script src="/zh/js/share/shareAndDownloadC.js"></script>
+</body>
+</html>

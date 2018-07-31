@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+</head>
+<body class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',border:false" id="searchPane" style="height:100px;background-color:#f5f5f5;overflow:hidden;">
+		<form id="searchForm">
+            <input id="fpId" name="fpId"  type="hidden" style="width:130px"/>
+    		<ul class="tb">
+    			<li>
+##					<div>
+##						<strong>理财产品类型：</strong>
+##                        <select id="fpType" name="fpType"  class="easyui-combobox"  data-options="editable:false" style="width:150px">
+##                            <option value="">--请选择--</option>
+##							#foreach ($!f in $!data.fpTypeList)
+##                                <option value="$!f.code">$!f.name</option>
+##							#end
+##                        </select>
+##					</div>
+					<div>
+						<strong>理财产品名称：</strong>
+						<input id="name" name="name"  class="easyui-validatebox" type="text" style="width:130px"/>
+					</div>
+					<div>
+						<strong>风险等级：</strong>
+                        <select id="risk_level" name="risk_level"  class="easyui-combobox" data-options="editable:false"  style="width:130px">
+                            <option value="">--请选择--</option>
+							#foreach ($!r in $!data.riskLevelList)
+                                <option value="$!r.code">$!r.name</option>
+							#end
+                        </select>
+					</div>
+					<div>
+						<strong>语言：</strong>
+						<select data-options="editable:false" class="easyui-combobox" name="language" style="width: 150px">
+							<option value="">--请选择--</option>
+							#foreach ($!l in $!data.languageList)
+								<option value="$!l.code">$!l.name</option>
+							#end
+						</select>
+					</div>
+				</li>
+				<li>
+                    <div>
+                        <strong>状态：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="status" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!s in $!data.statusList)
+                                <option value="$!s.code">$!s.name</option>
+							#end
+                        </select>
+                    </div>
+					<div style="float: right">
+    					<a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+    						查询
+    					</a>
+						<a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+    						清除
+    					</a>
+    				</div>
+    			</li>
+    		</ul>
+    	</form>
+	</div>
+	
+    <div data-options="region:'center',border:false" style="overflow:hidden;">
+		<table id="phjfFinancialProduct_grid"></table>
+##		<div id="right_menu" class="easyui-menu" style="width: 120px;">
+##	    	<div iconCls="icon-add" id="addItem">添加</div>
+##			<div iconCls="icon-edit" id="updateItem">修改</div>
+##	    	<div iconCls="icon-remove" id="mutiDelete">批量删除</div>
+##	    	<div iconCls="icon-remove" id="singleDelete">删除</div>
+##	    	<div iconCls="icon-look" id="viewItem">查看</div>
+##    	</div>
+	</div>
+</body>
+<script type="text/javascript" src="${path}/js/admin/financial/financialProduct/financialProductQuery.js"></script>
+</html>

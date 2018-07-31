@@ -1,0 +1,184 @@
+#set($scriptSlider=true)
+#parse("/velocity/include/header.vm")
+<div class="financingImg" style="background-image: url('../img/puHuiTong.jpg')"></div>
+<div class="columnBox">
+    <div class="columnList">
+        <div class="policyBox clearfix">
+            <div class="columnOutline">
+                <h5>惠民政策</h5>
+                <ul class="columnOutlineList">
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40061" target="_blank">【砥砺奋进的五年】九大惠民工程助理脱贫攻坚</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40059" target="_blank">农业发展风向标，2017惠农政策大汇总！ </a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40058" target="_blank">农村宅基地新动作，符合条件的农民能领10万补贴 </a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40056" target="_blank">划重点！这10项农业补贴要注意</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40051" target="_blank">明年国家普及的3项惠农政策，你能享受到哪一个？</a></li>
+                </ul>
+            </div>
+            <dl class="columnWall">
+                <h5><span class="columnIcon"></span>政策栏目</h5>
+                <ul class="columnWallList clearfix">
+                    <li><a href="/puHuiTongList?crumbName=1">农业牧业</a></li>
+                    <li><a href="/puHuiTongList?crumbName=2">教育教学</a></li>
+                    <li class="clearfix"><a href="/puHuiTongList?crumbName=3">特定人群</a></li>
+                    <li><a href="/puHuiTongList?crumbName=4">企业产业</a></li>
+                    <li><a href="/puHuiTongList?crumbName=5">就业创业</a></li>
+                    <li><a href="/puHuiTongList?crumbName=6">生态环保</a></li>
+                    <li><a href="/puHuiTongList?crumbName=7">医疗健康</a></li>
+                    <li><a href="/puHuiTongList?crumbName=8">文化体育</a></li>
+                    <li><a href="/puHuiTongList?crumbName=9">公共事业</a></li>
+                </ul>
+            </dl>
+        </div>
+        <div class="policyBox clearfix">
+            <div class="columnOutline">
+                <h5>今日关注</h5>
+                <ul class="columnOutlineList">
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40100" target="_blank">世界互联网大会:乌镇发出"一带一路"数字经济国际合作倡议</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40070" target="_blank">援疆扶贫：为脱贫攻坚注入新动力</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40095" target="_blank">2018年中央财政专项预算指标提前下达：69.6亿元支持新疆扶贫工作</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40013" target="_blank">“一带一路”战略给新疆小微金融行业发展带来想象空间</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40065" target="_blank">科技部、国家发改委批复支持新疆开展丝绸之路经济带核心区创新驱动发展试验 </a></li>
+                </ul>
+            </div>
+            <dl class="columnWall">
+                <h5><span class="columnIcon affairsIcon"></span>政务办事</h5>
+                <ul class="columnWallList affairsList clearfix">
+                    <li><a href="/newsInfo?article_code=N40200" target="_blank">社保/医保</a></li>
+                    <li><a href="/newsInfo?article_code=N40201" target="_blank">扶贫贷款</a></li>
+##                    <li><a href="javascript:;">惠民补贴</a></li>
+                    <li><a href="/newsInfo?article_code=N40202" target="_blank">教育</a></li>
+                </ul>
+            </dl>
+        </div>
+        <div class="policyBox clearfix">
+            <div class="columnOutline">
+                <h5>焦点资讯</h5>
+                <ul class="columnOutlineList">
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40099" target="_blank">让互联网之光照亮逐梦新征程——写在第四届世界互联网大会开幕之际</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40098" target="_blank">我国应做互联网贸易法治化推动者</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40097" target="_blank">大家的事由大家商量着办——习近平主席致第四届世界互联网大会的贺信引起与会中外嘉宾热烈反响</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40096" target="_blank">习近平致信祝贺第四届世界互联网大会开幕</a></li>
+                    <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40067" target="_blank">喜迎十九大｜新疆社保加大向困难人员倾斜力度</a></li>
+                </ul>
+            </div>
+            <dl class="columnWall">
+                <h5><span class="columnIcon convenienceIcon"></span>便民服务</h5>
+                <ul class="columnWallList clearfix">
+                    <li><a href="/puHuiTongList?crumbName=14">农业技术</a></li>
+                    <li><a href="/puHuiTongList?crumbName=15">生产加工</a></li>
+##                    <li><a href="/puHuiTongList?crumbName=16">生活缴费</a></li>
+                    <li><a href="/puHuiTongList?crumbName=17">特色农业</a></li>
+                </ul>
+            </dl>
+        </div>
+    </div>
+    <div class="plicyPlateBox">
+        <ul class="plicyPlateList clearfix">
+            <li class="curPlate">资讯</li>
+            <li>农业牧业</li>
+            <li>教育</li>
+            <li>医疗建设</li>
+            <li>企业产业</li>
+            <li>就业创业</li>
+            <li>生态环保</li>
+            <li>文化教育</li>
+            <li>公共建设</li>
+        </ul>
+##        资讯
+        <div class="plicyOutlineBox plicyOutlineShow">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40095" target="_blank">2018年中央财政专项预算指标提前下达：69.6亿元支持新疆扶贫工作</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40013" target="_blank">“一带一路”战略给新疆小微金融行业发展带来想象空间</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40067" target="_blank">喜迎十九大｜新疆社保加大向困难人员倾斜力度</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40065" target="_blank">科技部、国家发改委批复支持新疆开展丝绸之路经济带核心区创新驱动发展试验 </a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40096" target="_blank">习近平致信祝贺第四届世界互联网大会开幕</a></li>
+            </ul>
+        </div>
+##        农业牧业
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40159" target="_blank">农机购置补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40158" target="_blank">棉花目标价格改革补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40157" target="_blank">夏粮收购直补政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40156" target="_blank">农业保险保费补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40155" target="_blank">农村安居工程</a></li>
+            </ul>
+        </div>
+##        教育
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40164" target="_blank">内高班升入省属师范院校学生培养经费补贴政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40163" target="_blank">内高班办学补贴政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40162" target="_blank">内地高校新疆籍学生资助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40161" target="_blank">普通高中国家助学金</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40160" target="_blank">农村学生营养改善计划</a></li>
+            </ul>
+        </div>
+##        医疗建设
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40174" target="_blank">结核病患者免费治疗</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40173" target="_blank">新生儿疾病筛查项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40172" target="_blank">为南疆四地州农牧民家庭发放小药箱</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40171" target="_blank">全民健康体检工程目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40170" target="_blank">乡村医生财政补助标准</a></li>
+            </ul>
+        </div>
+##        企业产业
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40178" target="_blank">车船税优惠政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40177" target="_blank">中肉羊、肉牛标准化规模养殖场（小区）补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40176" target="_blank">草原畜牧业转型补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40175" target="_blank">纺织服装产业带动就业政策</a></li>
+            </ul>
+        </div>
+##        就业创业
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40183" target="_blank">返乡就业创业社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40182" target="_blank">灵活就业人员社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40181" target="_blank">自主创业人员社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40180" target="_blank">高校毕业生企业就业社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40179" target="_blank">扶贫小额信贷政策</a></li>
+            </ul>
+        </div>
+##        生态环保
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40188" target="_blank">草原生态保护补助奖励政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40187" target="_blank">退耕还草补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40186" target="_blank">高效节水补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40185" target="_blank">新一轮退耕还林补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40184" target="_blank">上一轮退耕还林完善补助</a></li>
+            </ul>
+        </div>
+##        文化教育
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40194" target="_blank">贫困地区送戏下乡补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40193" target="_blank">农村文化建设专项资金补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40192" target="_blank">乡镇（街道）文化站经费补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40191" target="_blank">农村电影放映服务</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40190" target="_blank">农村广播电视服务</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40189" target="_blank">村图书室免费赠阅出版物</a></li>
+            </ul>
+        </div>
+##        公共建设
+        <div class="plicyOutlineBox">
+            <ul class="plicyOutlineList columnOutlineList">
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40199" target="_blank">村级公益事业建设一事一议财政奖补</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40198" target="_blank">南疆四地州庭院经济补助项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40197" target="_blank">危旧房改造和配套基础设施项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40196" target="_blank">易地扶贫搬迁补助标准</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40195" target="_blank">大中型水库移民后期扶持资金</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="/js/showBoards/puHuiTong.js"></script>
+</body>
+</html>

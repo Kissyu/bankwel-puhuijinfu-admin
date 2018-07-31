@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+</body>
+<script type="text/javascript" src="${path}/js/admin/monitorLog/reflushLogBusFieldPage.js"></script>
+</html>

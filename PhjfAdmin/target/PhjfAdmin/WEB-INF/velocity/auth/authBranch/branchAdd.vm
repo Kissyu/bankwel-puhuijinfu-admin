@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authBranch/branchAdd.js"></script>
+
+    <style type="text/css">
+        th,td{
+            text-align: center;
+        }
+        .tb li {
+            margin-top: 15px;
+            margin-left: 20px;
+            float: left;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: 6px;
+        }
+        .addBranchForm {
+            margin: 20px 0;
+        }
+        .branchGui {
+            display: block;
+            text-align: right;
+            float: left;
+            font-weight: bold;
+        }
+        .submitBox{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .submitBranch{
+            width:150px;
+            height:30px;
+            line-height: 30px;
+            margin-left: -150px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            border-radius:10px;
+            display: inline-block;
+        }
+        .submitBranch:hover{
+            background: #eaf2ff;
+        }
+        .addBranchForm ul li {
+            width: 30%;
+        }
+        .addBranchForm ul li input {
+            padding: 6px 6px;
+            width: 240px;
+        }
+        .addBranchForm ul li .iptLabel {
+            margin-left: 0;
+            line-height: 34px;
+            width: 85px;
+        }
+        .addBranchForm ul li .iptContent {
+            width: 252px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'center'" style="background-color: rgb(245,245,245);">
+<form id="addBranchForm" class="addBranchForm">
+    <ul class="tb clearfix">
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">父级ID：</strong></div>
+            <div class="fl iptContent">
+                <input type="hidden" id="treepath" name="treepath" value="$!treepath" class="easyui-validatebox" readonly= "true" />
+                <input type="text" id="parent_seq_id" name="parent_seq_id" value="$!parent_seq_id"  readonly= "true"/>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">名称：</strong></div>
+            <div class="fl iptContent">
+                <input type="text" id="name" name="name" class="easyui-validatebox"
+                       data-options="required:true" />
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">简称：</strong></div>
+            <div class="fl iptContent">
+                <input type="text" id="abbr_name" name="abbr_name" class="easyui-validatebox"
+                       data-options="required:true"/>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">层级：</strong></div>
+            <div class="fl iptContent">
+                <input type="text" id="level" name="level" class="easyui-numberbox"/>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">序号：</strong></div>
+            <div class="fl iptContent">
+                <input type="text" id="order_no" name="order_no" class="easyui-numberbox"/>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui">地址：</strong></div>
+            <div class="fl iptContent">
+                <input type="text" id="address" name="address" class="easyui-validatebox"/>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl iptLabel"><strong class="branchGui"><span>备注：</span></strong></div>
+            <div class="fl iptContent">
+                <textarea id="remark" name="remark"  style="width: 230px;height:100px;"></textarea>
+            </div>
+        </li>
+    </ul>
+
+    <div class="submitBox">
+        <a id="submitBranch" href="javascript:;" class="submitBranch">
+            提交
+        </a>
+    </div>
+</form>
+    </div>
+</body>
+
+
+</html>

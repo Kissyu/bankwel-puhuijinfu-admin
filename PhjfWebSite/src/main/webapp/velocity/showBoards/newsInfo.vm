@@ -1,0 +1,25 @@
+#parse("/velocity/include/header.vm")
+<div class="newsMain clearfix">
+    <h2 class="newTitle">$!data.title</h2>
+    <h4 class="newResource"><em class="newsTag">$!data.source</em><em>$!data.publish_date</em></h4>
+    <div id="newsContent">
+        $!data.content
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="js/about/about.js"></script>
+<script>
+    $(function () {
+        var headHeight = $(".headerbox").outerHeight();
+        var footerHeight = $(".footerBox").outerHeight();
+        var columnHeight = $(".newsMain").outerHeight();
+        var windowHeight = $(window).height();
+        if((headHeight+footerHeight+columnHeight)<windowHeight){
+            $(".newsMain").height((windowHeight-headHeight-footerHeight-30)+'px');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<!--通用js引入-->
+<script type="text/javascript" src="/js/lib/jquery1.8.2.min.js"></script>
+
+<script type="text/javascript" src="/js/common/common.js"></script>
+
+#if($scriptSlider&&$scriptSlider==true)
+<script type="text/javascript" src="/js/common/min/bannerSlider.js"></script>
+#end

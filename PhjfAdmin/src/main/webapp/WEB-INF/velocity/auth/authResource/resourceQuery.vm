@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authResource/resourceQuery.js"></script>
+
+    <style type="text/css">
+        th,td{
+            text-align: center;
+        }
+        .tb {
+            margin: 0 0 0 20px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .tb li {
+            padding: 20px 0 0 0;
+        }
+
+        .tb li div {
+            display: inline;
+        }
+    </style>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'north',border:false" id="searchPane"
+     style="height:80px;background-color:#f5f5f5;overflow:hidden;">
+    <form id="searchForm">
+        <ul class="tb">
+            <li>
+                <div style="margin-left:10px;">
+                    <strong>资源名称：</strong>
+                    <input name="name" type="text" class="easyui-validatebox" style="width:130px;"/>
+                </div>
+                <div style="margin-left:10px;">
+                    <strong>资源类型：</strong>
+                    <select name="type" class="easyui-combobox" data-options="editable:false" style="width: 200px;height: 22px;">
+                        <option value="">---全部---</option>
+                        <option value="menu">菜单</option>
+                        <option value="button">按钮</option>
+                        <option value="service">服务</option>
+                    </select>
+                </div>
+                <div style="margin-left:10px;">
+                    <strong>链接地址：</strong>
+                    <input name="url"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                <div>
+                    <a id="searchBtn" href="javascript:;" class="easyui-linkbutton"
+                       data-options="iconCls:'icon-search',plain:true">
+                        查询
+                    </a>
+                    <a id="clearBtn" href="javascript:;" class="easyui-linkbutton"
+                       data-options="iconCls:'icon-delete',plain:true">
+                        清除
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<div data-options="region:'center',border:false" style="overflow:hidden;">
+    <table id="resourceManage_grid"></table>
+    <div id="right_menu" class="easyui-menu" style="width: 120px;">
+        <div iconCls="icon-add" id="addItem">添加角色</div>
+        <div iconCls="icon-edit" id="updateItem">修改</div>
+    </div>
+</div>
+</body>
+
+
+</html>

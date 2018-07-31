@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/role/roleAdd.js"></script>
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'center'" class="contentPanel">
+    <div class="mainContent">
+        <form id="roleForm">
+        <input type="hidden" id="seq_uuid" name="seq_uuid" value="$!data.seq_uuid" />
+        <input type="hidden" name="seq_id" value="$!data.seq_id" />
+        <div class="rowGroup clearfix">
+            <div class="rowBox clearfix">
+                <strong class="lineGuide">角色名称：</strong>
+                <div class="lineContent">
+                    <input id="name" name="name"  data-options="required:true" class="easyui-validatebox" type="text" value="$!data.name" style="width:200px;"/>
+                </div>
+            </div>
+            <div  class="rowBox clearfix">
+                <strong class="lineGuide">应用中心：</strong>
+                <div class="lineContent">
+                    <select name="apply_center_seq_id" class="easyui-combobox" data-options="editable:false" style="width: 224px;height: 30px;line-height: 30px;">
+                        <option value="">---全部---</option>
+                        #foreach($!o in $!applyList)
+                        <option value="$!o.apply_seq_id" #if($!data.apply_center_seq_id == $!o.apply_seq_id) selected
+                        #end>$!o.apply_name</option>
+                        #end
+                    </select>
+                </div>
+            </div>
+            <div class="rowBox clearfix">
+                <strong class="lineGuide">备注：</strong>
+                <div class="remarkBox">
+                    <textarea id="remark" name="remark" style="width:200px; height: 100px;">$!data.remark</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="submitBox">
+            <a id="submitAuthRole" href="javascript:;" class="submitBtn">
+                提交
+            </a>
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

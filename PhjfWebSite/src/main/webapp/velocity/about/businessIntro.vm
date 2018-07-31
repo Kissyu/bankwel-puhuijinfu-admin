@@ -1,0 +1,94 @@
+#parse("/velocity/include/header.vm")
+<div class="aboutContainer">
+    <div class="aboutMain clearfix">
+        #parse("/velocity/include/leftNav.vm")
+        <div class="contentBox fl">
+            <h4 class="contentColor">业务介绍</h4>
+            <span class="titDesline"></span>
+            <h5 class="busSubTit">互联网+普惠金融平台</h5>
+            <p class="contentColor">新疆互联网+普惠金融平台是在国家“一带一路”大背景下，为贯彻国务院《关于印发推进普惠金融发展规划（2016-2020年）的通知》（国发〔2015〕74号）精神，促进新疆普惠金融创新发展，服务社会稳定和长治久安，由中国人民银行乌鲁木齐中心支行牵头推动的金融信息服务平台。平台是新疆自治区政府指定的普惠金融信息服务平台，被列为自治区党委和政府2016年重点工作，并得到自治区人民银行、银监局、证监局、发改委、经信委、财政厅、金融办、网信办、通信管理局等九部门的联合发文支持（《关于落实普惠金融要求推进“新疆互联网+普惠金融平台”建设的实施意见》（乌银发〔2017〕52号））。
+            </p>
+            <h5 class="busIntroTit">在与各方展开广泛合作的基础上，平台的业务包括：</h5>
+            <div class="clearfix">
+                <div class="posr fl">
+                    <span class="introLiTit inlineblock">A</span>
+                    <h5 class="posa liTitCon">金融信息服务</h5>
+                </div>
+                <p class="fl contentColor liCon">平台的定位是成为连接各合作方（包括银行、基金、证券、保险等机构）与用户之间的信息桥梁，解决金融服务中的信息不对称问题。具体地，平台上将会搭载各合作方的金融产品和服务并展示给我们的用户，并为用户提供获得这些产品和服务的入口，在选择好满意的产品后，用户可以通过平台提供的入口购买。</p>
+            </div>
+            <ul class="preUl">
+                <li class="preLi clearfix">
+                    <div class="preLiNum fl">1</div>
+                    <div class="fl preLiContainer">
+                        <p class="preLiCon"><strong class="bold">金融基础服务</strong>：包括预约取款、开户、政策、金融知识宣传等；</p>
+                        <p class="preLiCon">a、预约取款：针对偏远地区的用户，您可以通过平台APP提供的定位服务选择取款点预约取款，平台会将您的
+                            预约信息推送给商家，实现预约。</p>
+                        <p class="preLiCon">b、开户：通过平台，您可以根据需要在平台任意一家合作银行或支付机构开设电子账户，并以此为基础享受到平台各合作方提供的金融产品和服务；
+                        </p>
+                        <p class="preLiCon">c、政策及金融知识宣传：平台为您开通定制化专栏，您可以方便的浏览重要的政策要闻，学习金融知识；
+                        </p>
+                    </div>
+                </li>
+                <li class="preLi clearfix">
+                    <div class="preLiNum fl">2</div>
+                    <div class="fl preLiContainer">
+                        <p class="preLiCon"><strong class="bold">金融应用服务</strong>：金融超市、扫码支付、贷款服务等；</p>
+                        <p class="preLiCon">a、金融超市：平台上搭载各合作银行的金融产品，如理财、货币基金等，您可以很方便的进行比较，选择出最满
+                            意的产品并通过平台提供的入口进行购买；</p>
+                        <p class="preLiCon">b、扫码支付：平台APP提供扫码支付的功能，并努力实现与各合作方的互扫互认，让您真正实现一码走天下；
+                        </p>
+                        <p class="preLiCon">c、贷款服务：平台为您提供最全面快捷的贷款中介服务，通过平台提交您的贷款需求和资料，平台将会把您的需求同时推送给多家合作银行，实现您的利益和贷款效率的最大化；
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="clearfix introLiWrap">
+                <div class="posr fl">
+                    <span class="introLiTit inlineblock">B</span>
+                    <h5 class="posa liTitCon">生活便利服务</h5>
+                </div>
+                <p class="fl contentColor liCon bges">包括生活缴费、产品销售和生产生活资料购买等；。</p>
+            </div>
+            <ul class="preUl">
+                <li class="preLi clearfix">
+                    <div class="preLiNum fl">1</div>
+                    <div class="fl preLiContainer">
+                        <p class="preLiCon"><strong class="bold">生活缴费</strong>：平台将联合政府部门、电信运营商、合作银行等一起推进建立统一的生活缴费平台，让您足不出户实现便捷优质的缴费服务；</p>
+                    </div>
+                </li>
+                <li class="preLi clearfix">
+                    <div class="preLiNum fl">2</div>
+                    <div class="fl preLiContainer">
+                        <p class="preLiCon"><strong class="bold">产品销售</strong>：立足新疆本地特色，联合电商公司，平台将提供独具特色的新疆特产品销售，为疆内居民创收的同时宣传新疆产品；</p>
+                    </div>
+                </li>
+                <li class="preLi clearfix">
+                    <div class="preLiNum fl">3</div>
+                    <div class="fl preLiContainer">
+                        <p class="preLiCon"><strong class="bold">生产生活资料购买</strong>：平台将联合电商公司，整合物流资源，为您提供优质的网上购物服务。</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="clearfix">
+                <div class="posr fl pad30">
+                    <span class="introLiTit inlineblock">C</span>
+                    <h5 class="posa liTitCon liTitConC">大数据及征信服务</h5>
+                </div>
+                <p class="fl contentColor liCon liConC">利用平台积累的数据和连接的外部数据，开展大数据分析和挖掘，改善用户体验并对外提供统一渠道核验服务；公司同时计划建立中小微企业数据库等征信服务；</p>
+            </div>
+            <div class="clearfix pdb30">
+                <div class="posr fl">
+                    <span class="introLiTit inlineblock">D</span>
+                    <h5 class="posa liTitCon">其他服务</h5>
+                </div>
+                <p class="fl contentColor liCon liConD">包括向合作方提供的技术软件支持和其他服务。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="js/about/about.js"></script>
+</body>
+</html>

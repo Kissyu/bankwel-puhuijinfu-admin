@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>普惠金服系统登录</title>
+    <link href="/styles/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/styles/easyui/default/easyui.css">
+    <link rel="stylesheet" href="/styles/easyui/icon.css"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/styles/common.css"/>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script>
+        //session过期后跳出iframe
+        if (window != top){
+            top.location.href = location.href;
+        }
+        var token = "${DukeToken}";
+    </script>
+</head>
+<body>
+<div class="headerBox">
+    <div class="loginheader clearfix">
+        <div class="logo"><span></span>普惠金服系统</div>
+    </div>
+</div>
+<div class="maincontent" data-isSmsCode="0">
+    <form id="loginForm" action="/login">
+        <div class="loginBox">
+            <h5>请登录</h5>
+            <div class="formBox">
+                <div class="inpBox clearfix">
+                    <span class="iconBox"><i class="userIcon"></i></span>
+                    <input type="text" name="username" id="userName" placeholder="账户" value=""/>
+                </div>
+                <div class="inpBox clearfix">
+                    <span class="iconBox"><i class="passIcon"></i></span>
+                    <input type="password" name="password" id="password" placeholder="密码" value="" autocomplete
+                            ="new-password"/>
+                </div>
+                <div class="inpBox codeInpBox clearfix">
+                    <input type="text" name="verifyCode" id="verifyCode" placeholder="验证码" />
+                    <span class="getCode" id="getCode">获取验证码</span>
+                    <span class="reGetCode"><i id="timeSend">60</i>秒后重新获取</span>
+                </div>
+                <div  class="inpBox applyCentre clearfix">
+                    <input name="apply_center_seq_id" id="apply_center_seq_id" class="easyui-combobox" data-options="editable:false,panelHeight:'74',valueField:'apply_seq_id',textField:'apply_name'" style="width: 340px;height: 42px;line-height: 30px; border: none;" />
+                </div>
+                <div class="noneTip">账户名不能为空</div>
+            ##                <div class="otherSe">
+            ##                    <span class="isremember rememberme"><i></i>保持登录</span>
+            ##                </div>
+                <div class="loginBtn clearfix" id="loginBtn"><a href="javascript:;">登录</a> </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/js/easyui/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/js/common/util.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.md5.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
+</html>

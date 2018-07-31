@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <link href="/zh/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/zh/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/zh/css/global.css">
+</head>
+<body>
+<div class="headerbox">
+    <div class="header clearfix">
+        <h1 class="logo fl">
+            <a href="/index">普惠金服</a>
+        </h1>
+        <iframe src="/zh/index/nav.html" frameborder="0" scrolling="no" id="navFrame"  onload="changeFrameHeight()"></iframe>
+        <!--二维码-->
+        <iframe src="/zh/index/qrCode.html" frameborder="0" width="100%" scrolling="no" id="qrCodeFrame" class="qrCodeFrame"></iframe>
+        <div class="selectLan fr">
+            <div class="curLan">中文简体<span></span></div>
+            <div class="showLan">
+                <p class="lanList">中文简体</p>
+                <p class="lanList forChoLan">ئۇيغۇر تىلى</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newsMain clearfix">
+    <h2 class="newTitle">${data.title}</h2>
+    <h4 class="newResource"><em class="newsTag">${data.source}</em><em>${data.publish_date}</em></h4>
+    <div id="newsContent">
+        ${data.content}
+    </div>
+</div>
+<div class="footerBox">
+    <p class="copyright">© &nbsp;2017&nbsp; 新疆丝路普惠金融信息服务有限公司 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank"> 新ICP备17002742号</a></p>
+</div>
+<script type="text/javascript" src="/zh/js/lib/jquery1.8.2.min.js"></script>
+<script type="text/javascript" src="/zh/js/common/common.js"></script>
+<script>
+    $(function () {
+        var headHeight = $(".headerbox").outerHeight();
+        var footerHeight = $(".footerBox").outerHeight();
+        var columnHeight = $(".newsMain").outerHeight();
+        var windowHeight = $(window).height();
+        if((headHeight+footerHeight+columnHeight)<windowHeight){
+            $(".newsMain").height((windowHeight-headHeight-footerHeight-30)+'px');
+        }
+    });
+</script>
+</body>
+</zh/html>

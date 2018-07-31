@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改账户</title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authOperator/operatorModify.js"></script>
+
+    <style type="text/css">
+        th,td{
+            text-align: center;
+        }
+        .tb li {
+            margin-top: 15px;
+            margin-left: 20px;
+            float: left;
+        }
+        input {
+            border: 1px solid #ccc;
+            padding: 6px;
+        }
+        .addBranchForm {
+            margin: 20px 0;
+        }
+        .branchGui {
+            display: block;
+            text-align: right;
+            float: left;
+            font-weight: bold;
+        }
+        .submitBox{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .submitBranch{
+            width:150px;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            border:1px solid #a9a9a9;
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            border-radius:10px;
+            display: inline-block;
+        }
+        .submitBranch:hover{
+            background: #eaf2ff;
+        }
+        .addBranchForm ul li {
+            width: 30%;
+        }
+        .addBranchForm ul li input{
+            padding: 6px 6px;
+            width: 240px;
+        }
+        .iptContent select {
+            padding: 6px 6px;
+            width: 252px;
+        }
+        .addBranchForm ul li .iptLabel {
+            margin-left: 0;
+            line-height: 34px;
+            width: 85px;
+        }
+        .addBranchForm ul li .iptContent {
+            width: 252px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'center'" style="background-color: rgb(245,245,245);">
+    <form id="addBranchForm" class="addBranchForm">
+        <ul class="tb clearfix">
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">账户名：</strong></div>
+                <div class="fl iptContent">
+                    <input type="hidden" name="seq_id" value="$!seq_id"></input>
+                    <input type="hidden" name="seq_uuid" value="$!seq_uuid"></input>
+                    <input type="text" id="operate_name" name="operate_name" value="$!operate_name" class="easyui-validatebox"
+                           data-options="required:true"/>
+                </div>
+            </li>
+            <input type="hidden" id="password" name="password" value="$!password"/>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">真实姓名：</strong></div>
+                <div class="fl iptContent">
+                    <input type="text" id="true_name" class="easyui-validatebox" name="true_name" value="$!true_name" data-options="required:true"/>
+                </div>
+            </li>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">邮箱：</strong></div>
+                <div class="fl iptContent">
+                    <input type="email" id="email" name="email" value="$!email" class="easyui-validatebox" data-options="required:true"/>
+                </div>
+            </li>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">联系电话：</strong></div>
+                <div class="fl iptContent">
+                    <input type="text" id="mobile" name="mobile" value="$!mobile" class="easyui-validatebox" data-options="required:true"/>
+                </div>
+            </li>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">组织机构：</strong></div>
+                <div class="fl iptContent">
+                    <input type="hidden" id="branch_seq_id" name="branch_seq_id" value="$!branch_seq_id">
+                    <input type="text" id="branch_name" value="$!branch_name" class="easyui-validatebox"/>
+                </div>
+            </li>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui">账户类型：</strong></div>
+                <div class="fl iptContent">
+                    <select name="opt_type" id="opt_type" class="easyui-validatebox" data-options="required:true">
+                        <option value="">---------------请选择------------------</option>
+                        #se
+                        #if($!opt_type == 'normal')
+                            <option value="normal" selected>普通账户</option>
+                            <option value="admin">管理员</option>
+                        #else
+                            <option value="normal">普通账户</option>
+                            <option value="admin" selected>管理员</option>
+                        #end
+
+                    </select>
+                </div>
+            </li>
+            <li class="fl clearfix">
+                <div class="fl iptLabel"><strong class="branchGui"><span>备注：</span></strong></div>
+                <div class="fl iptContent">
+                    <textarea id="remark" name="remark"  style="width:230px;height:100px;"></textarea>
+                </div>
+            </li>
+        </ul>
+
+        <div class="submitBox">
+            <a id="submitBranch" href="javascript:;" class="submitBranch">
+                提交
+            </a>
+        </div>
+    </form>
+</div>
+<div id="branchTreeWin" class="easyui-window" title="组织机构列表"
+     style="width: 400px; height: 400px;padding: 0;"
+     data-options="closed:true,modal:true,collapsible:false,minimizable:false,maximizable:false,resizable:false">
+    <div class="easyui-layout" data-options="fit:true" id="branchTree">
+        <div region="center">
+            <div class="zTreeDemoBackground">
+                <ul id="mainBranchTree" class="ztree"></ul>
+            </div>
+        </div>
+        <div region="south" data-options="noheader:true" style="height: 35px;text-align: center;vertical-align: middle;
+			padding-top: 4px;">
+            <a href="#" id="btn_ok" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-pass'">确定</a>
+            <a href="#" id="btn_cancel" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cancel'">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>

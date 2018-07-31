@@ -1,0 +1,174 @@
+#set($scriptSlider=true)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普惠金服</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <link href="/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+</head>
+<body>
+<div class="headerbox">
+    <div class="header clearfix">
+        <h1 class="logo fl">
+            <a href="/index">普惠金服</a>
+        </h1>
+        <iframe src="/html/index/nav.html" frameborder="0" scrolling="no" id="navFrame" onload="changeFrameHeight()"></iframe>
+        <!--二维码-->
+        <iframe src="/html/qrCode.html" frameborder="0" width="100%" scrolling="no" id="qrCodeFrame" class="qrCodeFrame"></iframe>
+        <div class="selectLan fr">
+            <div class="curLan">中文简体<span></span></div>
+            <div class="showLan">
+                <p class="lanList">中文简体</p>
+                <p class="lanList forChoLan">ئۇيغۇر تىلى</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="columnBox puHuiTongBox">
+    <div class="plicyPlateBox">
+        <div class="puhuiCrumbs">
+            <a href="/puHuiTong">普惠通</a>
+            <span>&gt;</span>
+            <a href="javascript:;" class="curPuhuiCrumb">
+                #if($data.crumbName=='1')
+                    农业牧业
+                #elseif($data.crumbName=='2')
+                    教育教学
+                #elseif($data.crumbName=='3')
+                    特定人群
+                #elseif($data.crumbName=='4')
+                    企业产业
+                #elseif($data.crumbName=='5')
+                    就业创业
+                #elseif($data.crumbName=='6')
+                    生态环保
+                #elseif($data.crumbName=='7')
+                    医疗健康
+                #elseif($data.crumbName=='8')
+                    文化体育
+                #elseif($data.crumbName=='9')
+                    公共事业
+                #elseif($data.crumbName=='10')
+                    社保/医保
+                #elseif($data.crumbName=='11')
+                    扶贫贷款
+                #elseif($data.crumbName=='12')
+                    惠民补贴
+                #elseif($data.crumbName=='13')
+                    教育
+                #elseif($data.crumbName=='14')
+                    农业技术
+                #elseif($data.crumbName=='15')
+                    生产加工
+                #elseif($data.crumbName=='16')
+                    生活缴费
+                #elseif($data.crumbName=='17')
+                    特色农业
+                #end
+            </a>
+        </div>
+        <ul class="plicyOutlineList columnOutlineList">
+            #if($data.crumbName=='1')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40159" target="_blank">农机购置补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40158" target="_blank">棉花目标价格改革补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40157" target="_blank">夏粮收购直补政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40156" target="_blank">农业保险保费补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40155" target="_blank">农村安居工程</a></li>
+            #elseif($data.crumbName=='2')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40164" target="_blank">内高班升入省属师范院校学生培养经费补贴政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40163" target="_blank">内高班办学补贴政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40162" target="_blank">内地高校新疆籍学生资助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40161" target="_blank">普通高中国家助学金</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40160" target="_blank">农村学生营养改善计划</a></li>
+            #elseif($data.crumbName=='3')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40169" target="_blank">非物质文化遗产传承人补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40168" target="_blank">“爱心天使”助学项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40167" target="_blank">南疆地区农村计划生育家庭特殊奖励制度</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40166" target="_blank">国家西部地区计划生育“少生快富”工程</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40165" target="_blank">计生宣传员岗位津贴和交通费补助</a></li>
+            #elseif($data.crumbName=='4')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40178" target="_blank">车船税优惠政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40177" target="_blank">中肉羊、肉牛标准化规模养殖场（小区）补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40176" target="_blank">草原畜牧业转型补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40175" target="_blank">纺织服装产业带动就业政策</a></li>
+            #elseif($data.crumbName=='5')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40183" target="_blank">返乡就业创业社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40182" target="_blank">灵活就业人员社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40181" target="_blank">自主创业人员社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40180" target="_blank">高校毕业生企业就业社会保险补贴</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40179" target="_blank">扶贫小额信贷政策</a></li>
+            #elseif($data.crumbName=='6')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40188" target="_blank">草原生态保护补助奖励政策</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40187" target="_blank">退耕还草补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40186" target="_blank">高效节水补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40185" target="_blank">新一轮退耕还林补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40184" target="_blank">上一轮退耕还林完善补助</a></li>
+            #elseif($data.crumbName=='7')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40174" target="_blank">结核病患者免费治疗</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40173" target="_blank">新生儿疾病筛查项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40172" target="_blank">为南疆四地州农牧民家庭发放小药箱</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40171" target="_blank">全民健康体检工程目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40170" target="_blank">乡村医生财政补助标准</a></li>
+            #elseif($data.crumbName=='8')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40194" target="_blank">贫困地区送戏下乡补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40193" target="_blank">农村文化建设专项资金补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40192" target="_blank">乡镇（街道）文化站经费补助</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40191" target="_blank">农村电影放映服务</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40190" target="_blank">农村广播电视服务</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40189" target="_blank">村图书室免费赠阅出版物</a></li>
+            #elseif($data.crumbName=='9')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40199" target="_blank">村级公益事业建设一事一议财政奖补</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40198" target="_blank">南疆四地州庭院经济补助项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40197" target="_blank">危旧房改造和配套基础设施项目</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40196" target="_blank">易地扶贫搬迁补助标准</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40195" target="_blank">大中型水库移民后期扶持资金</a></li>
+            #elseif($data.crumbName=='10')
+                社保/医保
+            #elseif($data.crumbName=='11')
+                扶贫贷款
+            #elseif($data.crumbName=='12')
+                惠民补贴
+            #elseif($data.crumbName=='13')
+                教育
+            #elseif($data.crumbName=='14')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40210" target="_blank">农业防寒生产技术要点</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40209" target="_blank">专家教你如何选择适合你种植棉花品种</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40208" target="_blank">梨树冬季如何做好肥水管理</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40207" target="_blank">果树树干涂白 应注意这些问题</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40206" target="_blank">苹果圈深加工方法</a></li>
+            #elseif($data.crumbName=='15')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40219" target="_blank">甘薯颗粒全粉生产工艺</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40218" target="_blank">农产品加工类新技术-西瓜功能性成分提取与资源化加工技术</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40217" target="_blank">对金融支持农业产业化发展的调研分析</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40216" target="_blank">夯实基础，乘势而上，发挥弱势学科的后发优势</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40220" target="_blank">科学家成功突破油菜籽加工关键技术装备</a></li>
+            #elseif($data.crumbName=='17')
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40215" target="_blank">甘薯蛋白生产技术</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40214" target="_blank">科学发现羊繁殖力调控基因及分子机制</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40213" target="_blank">棉花叶枝利用机理及其配套高产简化栽培技术</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40212" target="_blank">科学家揭示番茄紫色果实形成的分子机理</a></li>
+                <li class="clearfix"><span class="outlineDot">.</span><a href="/newsInfo?article_code=N40211" target="_blank">我科学家发现防控稻田杂草新机制</a></li>
+            #end
+        </ul>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script>
+    $(function () {
+        var headHeight = $(".headerbox").outerHeight();
+        var footerHeight = $(".footerBox").outerHeight();
+        var columnHeight = $(".columnBox").outerHeight();
+        var windowHeight = $(window).height();
+        if((headHeight+footerHeight+columnHeight)<windowHeight){
+            $(".plicyPlateBox").height((windowHeight-headHeight-footerHeight-88)+'px');
+        }
+    });
+</script>
+</body>
+</html>

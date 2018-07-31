@@ -1,0 +1,195 @@
+#set($scriptSlider=true)
+#parse("/velocity/include/header.vm")
+<div class="banner-bd">
+    <ul class="banner-box" id="js_banbox">
+        <li style="background-image: url('../img/banner2.jpg')" class="ban_show">
+            <a href="javascript:;" title="互联网普惠金融平台" target="_blank">互联网普惠金融平台</a>
+        </li>
+        <li style="background-image: url('../img/banner1.jpg')" class="ban_show">
+            <a href="javascript:;" title="疆内金融服务平台" target="_blank">疆内金融服务平台</a>
+        </li>
+        <li style="background-image: url('../img/banner3.jpg')" class="ban_show">
+            <a href="javascript:;" title="以科技创新发展普惠金融" target="_blank">以科技创新发展普惠金融</a>
+        </li>
+    </ul>
+    <div class="ban_num" id="banner_num">
+        <span class="sub_num sub_num_show"></span>
+        <span class="sub_num"></span>
+        <span class="sub_num"></span>
+    </div>
+</div>
+##公司简介
+<div class="companyOverview clearfix">
+    <div class="fl"><img src="../img/companyView.png"></div>
+    <div class="companyDesc fr">
+        <div class="plateBox clearfix">
+            <p class="plateTitle">公司简介</p>
+            <p class="nameUnderline"></p>
+        </div>
+        <p class="englishName">COMPANY OVERVIEW</p>
+        <div class="companyContent">
+            新疆丝路普惠金融信息服务有限公司是一家旨在提供更好的普惠金融服务的科技企业，于2017年1月在中国人民银行乌鲁木齐中心支行、新疆金融学会的指导和推动下成立，致力于以科技创新驱动普惠金融发展。公司是自治区指定的负责新疆“互联网+普惠金融”平台及疆内金融服务平台建设和运营的唯一商业实体，并于2017年4月被选为新疆金融学会普惠金融专业委员会的会员单位。
+        </div>
+    </div>
+</div>
+##业务简介
+<div class="productsBg">
+    <div class="productsBox">
+        <div class="plateBox clearfix">
+            <p class="plateTitle">业务简介</p>
+            <p class="nameUnderline"></p>
+        </div>
+        <p class="englishName">PRODUCTS</p>
+        <p class="productOutline">互联网+普惠金融服务平台</p>
+        <div class="productsDesc">
+            新疆互联网+普惠金融平台是在国家“一带一路”大背景下，为贯彻国务院《关于印发推进普惠金融发展规划（2016-2020年）的通知》（国发〔2015〕74号）精神，促进新疆普惠金融创新发展，服务社会稳定和长治久安，由中国人民银行乌鲁木齐中心支行牵头推动的金融信息服务平台。平台是新疆自治区政府指定的普惠金融信息服务平台，被列为自治区党委和政府2016年重点工作，并得到自治区人民银行、银监局、证监局、发改委、经信委、财政厅、金融办、网信办、通信管理局等九部门的联合发文支持（《关于落实普惠金融要求推进“新疆互联网+普惠金融平台”建设的实施意见》（乌银发〔2017〕52号））。
+        </div>
+    </div>
+</div>
+<div class="productListBox">
+    <dl class="productList clearfix">
+        <dt> 在与各方展开广泛合作的基础上，平台的业务包括</dt>
+        <dd>
+            <div><img src="../img/products1.png" /></div>
+            <h6>金融信息服务</h6>
+            <div class="productDetail">
+                <p>1. 金融基础服务：包括预约取款、开户、政策、金融知识宣传等；</p>
+                <p>2. 金融应用服务：金融超市、扫码支付、贷款服务、理财产品推广等；</p>
+            </div>
+        </dd>
+        <dd>
+            <div><img src="../img/products2.png" /></div>
+            <h6>生活便民服务</h6>
+            <div class="productDetail">
+                包括生活缴费、产品销售和生产生活资料购买等；
+            </div>
+        </dd>
+        <dd>
+            <div><img src="../img/products3.png" /></div>
+            <h6>大数据及征信服务</h6>
+            <div class="productDetail">
+                利用平台积累的数据和外部数据，开展大数据分析和挖掘，改善用户体验并对外提供统一渠道核验服务；公司同时计划建立小微企业数据库等征信服务；
+            </div>
+        </dd>
+        <dd>
+            <div><img src="../img/products4.png" /></div>
+            <h6>其他服务</h6>
+            <div class="productDetail">
+                包括向合作方提供的技术软件支持和其他服务。
+            </div>
+        </dd>
+    </dl>
+</div>
+<!--公司新闻-->
+<div class="newsBox">
+    <div class="productListBox">
+        <div class="plateBox clearfix">
+            <p class="plateTitle">公司新闻</p>
+            <p class="nameUnderline"></p>
+        </div>
+        <p class="englishName">NEWS</p>
+        <div class="clearfix">
+            <ul class="newsImgList">
+                <li class="newsImgShow">
+                    <div class="newsImgLink clearfix"><a href="/newsInfo?article_code=N40100" target="_blank"><img src="../img/news2.png"/></a></div>
+                    <div class="newsOutline">
+                        <h6>世界互联网大会:乌镇发出"一带一路"数字经济国际合作倡议</h6>
+                        <p>
+                            为拓展数字经济领域的合作，2017年12月3日，在第四届世界互联网大会上，中国、埃及、老挝、沙特、塞尔维亚、泰国、土耳其、阿联酋等国家代表共同发起《“一带一路”数字经济国际合作倡议》。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="newsImgLink clearfix"><a href="/newsInfo?article_code=N40096" target="_blank"><img src="../img/news3.png"/></a></div>
+                    <div class="newsOutline">
+                        <h6>习近平致信祝贺第四届世界互联网大会开幕</h6>
+                        <p>新华社杭州12月3日电  第四届世界互联网大会3日上午在浙江省乌镇开幕。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="newsImgLink clearfix"><a href="/newsInfo?article_code=N40092" target="_blank"><img src="../img/news4.png"/></a></div>
+                    <div class="newsOutline">
+                        <h6>惠民政策抢先看！《新疆维吾尔自治区惠民政策明白册》（2017年版）（上） </h6>
+                        <p>
+                            第一部分 直接补贴政策（现金或实物）
+                            农村安居工程
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="newsImgLink clearfix"><a href="/newsInfo?article_code=N40095" target="_blank"><img src="../img/news5.png"/></a></div>
+                    <div class="newsOutline">
+                        <h6>2018年中央财政专项预算指标提前下达：69.6亿元支持新疆扶贫工作</h6>
+                        <p>
+                            财政部近期提前下达新疆2018年中央财政专项扶贫资金预算指标69.6亿元，支持新疆如期打赢脱贫攻坚战。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="newsImgLink clearfix"><a href="/newsInfo?article_code=N40080" target="_blank"><img src="../img/news1.png"/></a></div>
+                    <div class="newsOutline">
+                        <h6>新疆农村信用社:着力打造普惠金融新样板</h6>
+                        <p>
+                            普惠金融意在惠及所有社会群体，让所有得不到正规金融服务的人群能够有机会得到充分的金融服务。秉持这一普惠金融的独有情怀
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="newsListBox">
+                <P class="getMoreNews"><a href="javascript:;" target="_blank">更多<i></i></a></P>
+                <ul class="companyNews">
+                    <li class="mouseOverNews">
+                        <a href="/newsInfo?article_code=N40100" target="_blank">·  世界互联网大会:乌镇发出"一带一路"数字经济国际合作倡议</a>
+                        <span>2017-12-05</span>
+                    </li>
+                    <li>
+                        <a href="/newsInfo?article_code=N40096" target="_blank">·   习近平致信祝贺第四届世界互联网大会开幕</a>
+                        <span>2017-12-04</span>
+                    </li>
+                    <li>
+                        <a href="/newsInfo?article_code=N40092" target="_blank">·   惠民政策抢先看！《新疆维吾尔自治区惠民政策明白册》（2017年版）（上） </a>
+                        <span>2017-12-04</span>
+                    </li>
+                    <li>
+                        <a href="/newsInfo?article_code=N40095" target="_blank">·
+                             2018年中央财政专项预算指标提前下达：69.6亿元支持新疆扶贫工作</a>
+                        <span>2017-12-04</span>
+                    </li>
+                    <li class="lastNew">
+                        <a href="/newsInfo?article_code=N40080" target="_blank">· 新疆农村信用社:着力打造普惠金融新样板</a>
+                        <span>2017-11-30</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--合作伙伴-->
+<div class="productListBox partnersBox">
+    <div class="plateBox clearfix">
+        <p class="plateTitle partnerTitle">合作伙伴</p>
+        <p class="nameUnderline"></p>
+    </div>
+    <p class="englishName">PARTNERS</p>
+    <ul class="partnerList clearfix">
+        #foreach($!partner in $!data.partners)
+            <li class="clearfix #if($velocityCount==$!data.size()) lastPartner #end">
+                <div class="partnerIconBox"><img class="partnerIcon" src="$!partner.picture"></img></div>
+                <p>$!partner.partner_name</p>
+            </li>
+        #end
+    </ul>
+    <div class="friendlyLink">
+        <span>友情链接：</span>
+        #foreach($!link in $!data.links)
+            <a href="$!link.url" target="_blank">$!link.link_name</a>
+        #end
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="/js/index/index.js"></script>
+</body>
+</html>

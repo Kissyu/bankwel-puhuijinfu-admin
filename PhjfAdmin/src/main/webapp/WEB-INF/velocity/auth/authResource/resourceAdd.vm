@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/auth/authResource/resourceAdd.js"></script>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div class="sky"></div>
+<div data-options="region:'center'" class="contentPanel">
+    <div class="mainContent">
+        <form id="resourceForm">
+            <input type="hidden" id="seq_uuid" name="seq_uuid" value="$!data.seq_uuid" />
+            <input type="hidden" name="seq_id" value="$!data.seq_id" />
+            <input type="hidden" name="parent_seq_id" value="$!data.parent_seq_id" />
+            <input type="hidden" id="type" name="type" value="$!data.type" />
+            <div class="rowGroup clearfix">
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">上级名称：</strong>
+                    <div class="lineContent">
+                        <input id="parent_name" name="parent_name"  class="easyui-validatebox" type="text" value="$!parent_name" readonly style="width:200px;"/>
+                    </div>
+                </div>
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">资源名称：</strong>
+                    <div class="lineContent">
+                        <input id="name" name="name" data-options="required:true" class="easyui-validatebox" type="text" value="$!data.name" style="width:200px;"/>
+                    </div>
+                </div>
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">链接地址：</strong>
+                    <div class="lineContent">
+                        <input id="url" name="url" class="easyui-validatebox" type="text" value="$!data.url" style="width:200px;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="rowGroup clearfix">
+                <div  class="rowBox clearfix">
+                    <strong class="lineGuide">应用中心：</strong>
+                    <div class="lineContent">
+                        <select name="apply_center_seq_id" class="easyui-combobox" data-options="editable:false" style="width: 224px;height: 30px;line-height: 30px;">
+                            <option value="">---全部---</option>
+                            #foreach($!o in $!applyList)
+                                <option value="$!o.apply_seq_id" #if($!data.apply_center_seq_id == $!o.apply_seq_id) selected
+                                #end>$!o.apply_name</option>
+                            #end
+                        </select>
+                    </div>
+                </div>
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">操作目标：</strong>
+                    <div class="lineContent">
+                        <input id="opt_target" name="opt_target" class="easyui-validatebox" type="text" value="$!data.opt_target" style="width:200px;"/>
+                    </div>
+                </div>
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">操作内容：</strong>
+                    <div class="lineContent">
+                        <input id="opt_content" name="opt_content" class="easyui-validatebox" type="text" value="$!data.opt_content" style="width:200px;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="rowGroup clearfix">
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">备注：</strong>
+                    <div class="remarkBox">
+                        <textarea id="remark" name="remark" style="width:200px; height: 100px;">$!data.remark</textarea>
+                    </div>
+                </div>
+                <div class="rowBox clearfix">
+                    <strong class="lineGuide">排序号：</strong>
+                    <div class="lineContent">
+                        <input id="order_no" name="order_no"  class="easyui-validatebox" type="text" value="$!data.order_no" style="width:200px;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="submitBox">
+                <a id="submitAuthResource" href="javascript:;" class="submitBtn">
+                    提交
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

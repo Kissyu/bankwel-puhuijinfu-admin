@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/monitorLog/monitorLogQuery.js"></script>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',border:false" id="searchPane" style="height:150px;background-color:#f5f5f5;overflow:hidden;">
+		<form id="searchForm">
+    		<ul class="tb">
+    			<li>
+                    <div>
+                        <strong>平台系统：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="sys_code" style="width: 150px">
+                            <option value="">--请选择--</option>
+                            #foreach ($!l in $!data.systemCodeList)
+                                <option value="$!l.code">$!l.name</option>
+                            #end
+                        </select>
+                    </div>
+                    <div>
+                        <strong>子系统编号：</strong>
+                        <input id="sub_sys_code" name="sub_sys_code"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div>
+                        <strong>用户编号：</strong>
+                        <input id="user_id" name="user_id"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+				</li>
+                <li>
+                    <div>
+                        <strong>请求IP：</strong>
+                        <input id="clientip" name="clientip"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div>
+                        <strong>请求链接：</strong>
+                        <input id="url" name="url"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div>
+                        <strong>操作路径：</strong>
+                        <input id="bus_path" name="bus_path"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>操作方法：</strong>
+                        <input id="bus_method" name="bus_method"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div>
+                        <strong>请求日期(始)：</strong>
+                        <input id="startTime" name="startTime"  class="easyui-datebox" type="text" style="width:130px"/>
+                    </div>
+                    <div>
+                        <strong>请求日期(止)：</strong>
+                        <input id="endTime" name="endTime"  class="easyui-datebox" type="text" style="width:130px"/>
+                    </div>
+                    <div style="float: right">
+                        <a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+                            查询
+                        </a>
+                        <a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+                            清除
+                        </a>
+                    </div>
+                </li>
+    		</ul>
+    	</form>
+	</div>
+	
+    <div data-options="region:'center',border:false" style="overflow:hidden;">
+		<table id="phjfMonitorLog_grid"></table>
+	</div>
+</body>
+
+</html>

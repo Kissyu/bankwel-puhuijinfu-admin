@@ -1,0 +1,14 @@
+#*<ul class="leftNav fl">
+    #foreach($leftNav in $data.leftNavs)
+        <li #if($leftNav.code == $data.leftNavCode)class="curAboutPage"#end><a href="$leftNav.url">$leftNav.name</a></li>
+    #end
+</ul>*#
+<div class="leftNavTit fl">关于我们</div>
+<span class="contentTitBg"></span>
+<ul class="leftNav fl">
+    <li #if($!data.currentPage=="companyIntro") class="curAboutPage" #end><a href="/companyIntro">企业介绍</a></li>
+    <li #if($!data.currentPage=="businessIntro") class="curAboutPage" #end><a href="/businessIntro">业务介绍</a></li>
+    <li #if($!data.currentPage=="companyCulture") class="curAboutPage" #end><a href="/companyCulture">公司文化</a></li>
+    <li #if($!data.currentPage=="team") class="curAboutPage" #end><a href="/team">管理团队</a></li>
+    <li #if($!data.currentPage=="contactUs") class="curAboutPage" #end><a href="/contactUs">联系我们</a></li>
+</ul>

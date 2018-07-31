@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+</head>
+<body class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',border:false" id="searchPane" style="height:100px;background-color:#f5f5f5;overflow:hidden;">
+		<form id="searchForm">
+            <input id="aviId" name="aviId"  type="hidden" />
+    		<ul class="tb">
+    			<li>
+					<div>
+						<strong>版本：</strong>
+						<input id="app_version" name="app_version"  class="easyui-validatebox" type="text" style="width:130px"/>
+					</div>
+					<div>
+						<strong>是否强制更新：</strong>
+                        <select id="is_update" name="is_update"  class="easyui-combobox"  data-options="editable:false" style="width:130px">
+                            <option value="">--请选择--</option>
+							#foreach ($!c in $!data.isUpdateList)
+                                <option value="$!c.code">$!c.name</option>
+							#end
+                        </select>
+					</div>
+					<div>
+						<strong>渠道：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="channel" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!c in $!data.channelList)
+                                <option value="$!c.code">$!c.name</option>
+							#end
+                        </select>
+					</div>
+				</li>
+				<li>
+                    <div>
+                        <strong>状态：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="status" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!s in $!data.statusList)
+                                <option value="$!s.code">$!s.name</option>
+							#end
+                        </select>
+                    </div>
+					<div style="float: right">
+    					<a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+    						查询
+    					</a>
+						<a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+    						清除
+    					</a>
+    				</div>
+    			</li>
+    		</ul>
+    	</form>
+	</div>
+	
+    <div data-options="region:'center',border:false" style="overflow:hidden;">
+		<table id="phjfAppVersionInfo_grid"></table>
+	</div>
+</body>
+
+<script type="text/javascript" src="${path}/js/admin/system/appVersionInfo/appVersionQuery.js"></script>
+</html>

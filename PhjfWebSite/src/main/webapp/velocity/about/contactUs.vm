@@ -1,0 +1,36 @@
+#parse("/velocity/include/header.vm")
+<div class="aboutContainer">
+    <div class="aboutMain clearfix">
+        #parse("/velocity/include/leftNav.vm")
+        <div class="contentBox fl">
+            <h4>联系我们</h4>
+            <span class="titDesline"></span>
+            <p class="culCon">
+                新疆丝路普惠金服公司依靠独特的金融业务模式和政策资源，与国内多家商业银行、保险公司、基金公司、银联等金融机构建立了密切合作。诚信、专业、优质是我们选择合作伙伴的标准。
+            </p>
+            <p class="culCon pdb20"> 欢迎与我们接洽。</p>
+            <div class="clearfix">
+                <p class="culCon culConJustify fl wid120">电话</p><p class="culCon fl pal4">:</p>
+                <p class="culCon fl pal4"></p>
+            </div>
+            <div class="clearfix">
+                <p class="culCon culConJustify fl wid120">商务邮箱</p><p class="culCon fl pal4">:</p>
+                <p class="culCon fl pal4">yazhouhu@puhuijinfu.com</p>
+            </div>
+            <div class="clearfix">
+                <p class="culCon culConJustify fl wid120">客服邮箱</p><p class="culCon fl pal4">:</p>
+                <p class="culCon fl pal4">chunyandu@puhuijinfu.com</p>
+            </div>
+            <div class="clearfix pdb30">
+                <p class="culCon culConJustify fl wid120">地址</p><p class="culCon fl pal4">:</p>
+                <p class="culCon fl pal4">新疆乌鲁木齐经济技术开发区卫星路473号卫星大厦4楼</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+#parse("/velocity/include/footer.vm")
+#parse("/velocity/include/footer_js.vm")
+<script type="text/javascript" src="js/about/about.js"></script>
+</body>
+</html>

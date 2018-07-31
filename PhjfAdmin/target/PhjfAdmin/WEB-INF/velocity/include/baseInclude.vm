@@ -1,0 +1,25 @@
+
+
+<link rel="stylesheet" type="text/css" href="${path}/styles/easyui/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="${path}/compent/ztree/css/zTreeStyle/zTreeStyle.css">
+<link rel="stylesheet" href="${path}/styles/easyui/icon.css" />
+<link rel="stylesheet" href="${path}/styles/main.css" />
+<link rel="stylesheet" href="${path}/styles/common.css">
+
+
+<script>
+    var path = "${path}";
+    var token = "${DukeToken}";
+</script>
+<script type="text/javascript" src="${path}/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="${path}/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${path}/js/easyui/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${path}/js/common/util.js"></script>
+<script type="text/javascript" src="${path}/compent/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="${path}/compent/ztree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="${path}/js/jquery/jquery.md5.js"></script>
+
+
+
+
+

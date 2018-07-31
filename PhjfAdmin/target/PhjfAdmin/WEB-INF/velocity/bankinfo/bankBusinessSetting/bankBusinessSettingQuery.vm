@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',border:false" id="searchPane" style="height:100px;background-color:#f5f5f5;overflow:hidden;">
+		<form id="searchForm">
+    		<ul class="tb">
+    			<li>
+                    <div >
+                        <strong>银行类型名称：</strong>
+                        <input id="bt_name" name="bt_name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                    </div>
+                    <div >
+                        <strong>银行业务类型：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="type" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!l in $!data.bankTypeList)
+                                <option value="$!l.code">$!l.name</option>
+							#end
+                        </select>
+                    </div>
+					<div >
+						<strong>银行业务编码：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="business_code" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!l in $!data.bankBusinessList)
+                                <option value="$!l.code">$!l.name</option>
+							#end
+                        </select>
+					</div>
+				</li>
+				<li>
+                    <div>
+                        <strong>状态：</strong>
+                        <select data-options="editable:false" class="easyui-combobox" name="status" style="width: 150px">
+                            <option value="">--请选择--</option>
+							#foreach ($!s in $!data.statusList)
+                                <option value="$!s.code">$!s.name</option>
+							#end
+                        </select>
+                    </div>
+					<div style="float:right;">
+    					<a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+    						查询
+    					</a>
+						<a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+    						清除
+    					</a>
+    				</div>
+    			</li>
+    		</ul>
+    	</form>
+	</div>
+	
+    <div data-options="region:'center',border:false" style="overflow:hidden;">
+		<table id="bankType_grid"></table>
+
+	</div>
+</body>
+<script type="text/javascript" src="${path}/js/admin/bankinfo/bankBusinessSetting/bankBusinessSettingQuery.js"></script>
+</html>

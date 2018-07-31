@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普惠金服</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <link href="/zh/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/zh/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/zh/css/global.css">
+</head>
+<body>
+<div class="banner-bd">
+    <ul class="banner-box" id="js_banbox">
+        <%
+        for(banner in data.banners){
+        %>
+        <li style="background-image: url('${banner.img_url}')" class="ban_show">
+            <a href="${banner.url}" title="${banner.contents}" target="_blank">${banner.contents}</a>
+        </li>
+        <%}%>
+    </ul>
+    <div class="ban_num" id="banner_num">
+        <%
+        for(banner in data.banners){
+        %>
+        <span class="sub_num
+                   <%if(bannerLP.first){%>
+                   sub_num_show <%}%>
+        "></span>
+        <%}%>
+    </div>
+</div>
+<script type="text/javascript" src="/zh/js/lib/jquery1.8.2.min.js"></script>
+<script type="text/javascript" src="/zh/js/common/min/bannerSlider.js"></script>
+<script type="text/javascript" src="/zh/js/index/index.js"></script>
+</body>
+</html>

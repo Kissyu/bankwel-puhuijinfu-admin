@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	#parse("/WEB-INF/velocity/include/baseInclude.vm")
+    <script type="text/javascript" src="${path}/js/admin/huiminPolicy/policyPlate/huiminPolicyPlateQuery.js"></script>
+</head>
+<body class="easyui-layout" data-options="fit:true">
+<div data-options="region:'north',border:false" id="searchPane" style="height:100px;background-color:#f5f5f5;overflow:hidden;">
+    <form id="searchForm">
+        <ul class="tb">
+            <li>
+                <div>
+                    <strong>版块名称：</strong>
+                    <input id="name" name="name"  class="easyui-validatebox" type="text" style="width:130px"/>
+                </div>
+                <div>
+                    <strong>语言：</strong>
+                    <select data-options="editable:false" class="easyui-combobox" name="language" style="width: 150px">
+                        <option value="">--请选择--</option>
+						#foreach ($!l in $!data.languageList)
+                            <option value="$!l.code">$!l.name</option>
+						#end
+                    </select>
+                </div>
+                <div>
+                    <strong>状态：</strong>
+                    <select data-options="editable:false" class="easyui-combobox" name="status" style="width: 150px">
+                        <option value="">--请选择--</option>
+						#foreach ($!s in $!data.statusList)
+                            <option value="$!s.code">$!s.name</option>
+						#end
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>省份：</strong>
+                    <select data-options="editable:false" class="easyui-combobox" name="province" style="width: 150px">
+                        <option value="">--请选择--</option>
+                        #foreach ($!s in $!data.provincesList)
+                            <option value="$!s.province_id">$!s.province</option>
+                        #end
+                    </select>
+                </div>
+                <div style="float: right">
+                    <a id="searchBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">
+                        查询
+                    </a>
+                    <a id="clearBtn" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-delete',plain:true">
+                        清除
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div data-options="region:'center',border:false" style="overflow:hidden;">
+    <table id="phjfNewsPlate_grid"></table>
+
+</div>
+</body>
+
+</html>

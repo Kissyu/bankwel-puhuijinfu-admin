@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <contextName>frontier</contextName>
+    <property name="path" value="/mnt/opt/resin_phjf_web/log"></property>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%-10thread] %logger{36}[%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 输出到文件 -->
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${path}/stat.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${path}/stat.log.%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%-10thread] %logger{36}[%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--  打印sql-->
+    <logger name="java.sql.Connection" level="DEBUG"><appender-ref ref="STDOUT" /></logger>
+    <logger name="java.sql.Statement" level="DEBUG"><appender-ref ref="STDOUT" /></logger>
+    <logger name="java.sql.PreparedStatement" level="DEBUG"><appender-ref ref="STDOUT" /></logger>
+    <logger name="java.sql.ResultSet" level="DEBUG"><appender-ref ref="STDOUT" /></logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="ROLLING" />
+    </root>
+</configuration>
